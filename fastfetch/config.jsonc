@@ -1,0 +1,217 @@
+
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    // "type": "kitty",
+   "type": "kitty-direct",
+    // type": "kitty-icat",
+
+    //"source": "~/.config/fastfetch/ascii/cat-fish.txt",
+     "source": "~/.config/fastfetch/images/pngwing.png",
+
+    "height": 10,
+    // "width": 30,
+    "position": "left",
+
+        "color": {
+      "1": "red",
+      "2": "blue",
+      "3": "cyan",
+      "4": "green",
+      "5": "blue",
+      "6": "white",
+      "7": "red",
+      "9": "reset_",
+    },
+
+    "padding": {
+      "top": 1,
+      "right": 2,
+      "bottom": 1,
+    },
+  },
+  "display": {
+    "bar": {
+      "char.elapsed": "/",
+      "char.total": "/",
+      "width": 20,
+    },
+    "percent": {
+      "type": 3,
+      "color": {
+        "green": "#A88F86",
+        "yellow": "#A88F86",
+      },
+      "ndigits": 0,
+    },
+    "key": {
+      "width": 10,
+    },
+    "color": "blink_",
+    "separator": " 🔸 ",
+    },
+
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "format": "{6}{7}{#green}{8}{#}",
+      "outputColor": "blue",
+    },
+
+    {
+      "type": "custom",
+      "format": "┌────────────────────────────────── Hardware ────────────────────────────────────┐",
+      "outputColor": "#FFA500",
+      // "outputColor": "#778899",
+    },
+    {
+      "type": "host",
+      "key": " PC ",
+      "keyColor": "red",
+      
+    },
+    {
+      "type": "cpu",
+      "key": "│ ├ ",
+      "keyColor": "red",
+    },
+    {
+      "type": "gpu",
+      "key": "│ ├󰒆 ",
+      "keyColor": "red",
+    },
+    {
+      "type": "disk",
+      "key": "│ ├ ",
+      "folders": "/",
+      //"format": "{size-used} / {size-total} ({size-percentage})",
+      "keyColor": "red",
+    },
+    {
+      "type": "swap",
+      "key": "│ ├SW",
+      "keyColor": "red",
+    },
+    {
+      "type": "memory",
+      "key": "│ ├ ",
+      "keyColor": "red",
+    },
+    {
+      "type": "display",
+      "key": "│ ├ ",
+      "keyColor": "red",
+      "format": "MONITOR ({name}) {width}x{height} @ {refresh-rate}Hz",
+    },
+    {
+      "type": "custom",
+      "format": "└────────────────────────────────────────────────────────────────────────────────┘",
+      "outputColor": "#FFA500",
+    },
+    {
+      "type": "custom",
+      "format": "┌────────────────────────────────── Software ────────────────────────────────────┐",
+      "outputColor": "#FFA500",
+    },
+    {
+      "type": "os",
+      "key": "󰀵 OS ",
+      "keyColor": "#FFC0CB"
+    },
+    {
+      "type": "kernel",
+      "key": "│ ├ ",
+      "keyColor": "#FFC0CB",
+    },
+    {
+      "type": "packages",
+      "key": "│ ├󰏖 ",
+      "keyColor": "#FFC0CB",
+    },
+    {
+      "type": "localip",
+      "key": "│ ├IP",
+      "keyColor": "#FFC0CB",
+    },
+    /*{
+      "type": "publicip",
+      "key": "│ ├PIP",
+      "keyColor": "#FFA500",
+      "format": "{ip}",
+      "timeout": 3000
+    },*/
+    {
+      "type": "shell",
+      "key": "│ └ ",
+      "keyColor": "#FFC0CB",
+    },
+   // "break",
+    {
+  "type": "custom",
+  "key": " DE ",
+  "format": "Aqua",
+  "keyColor": "#A8D5BA",
+},
+
+  /*  {
+      "type": "lm",
+      "key": "│ ├ ",
+      "keyColor": "#FF6F00",
+    }, */
+    {
+      "type": "wm",
+      "key": "│ ├ ",
+      "keyColor": "#A8D5BA",
+    },
+    {
+      "type": "wmtheme",
+      "key": "│ ├󰉼 ",
+      "keyColor": "#A8D5BA"
+    },
+   /* { 
+       "type": "command",
+       "key": "│ ├ ",
+       "keyColor": "blue",
+       "text": "pgrep yabai &> /dev/null && echo yabai || echo Quartz Compositor",
+   },*/
+    {
+      "type": "terminal",
+      "key": "│ ├ ",
+      "keyColor": "#A8D5BA",
+    },
+    {
+      "type": "terminalfont",
+      "key": "│ └ ",
+      "keyColor": "#A8D5BA",
+    },
+    {
+      "type": "custom",
+      "format": "└────────────────────────────────────────────────────────────────────────────────┘",
+      "outputColor": "#FFA500",
+    },
+    {
+      "type": "custom",
+      "format": "┌─────────────────────────────────── Uptime ─────────────────────────────────────┐",
+      "outputColor": "#FFA500",
+    },
+    
+    {
+      "type": "uptime",
+      "key": "   ⏳",
+      "keyColor": "#141414",
+    },
+    {
+      "type": "custom",
+      "format": "└────────────────────────────────────────────────────────────────────────────────┘",
+      "outputColor": "#FFA500",
+    },
+   /* {
+      "type": "colors",
+      "paddingLeft": 27,
+      "symbol": "star",
+    },*/
+    "break",
+  ]
+}
