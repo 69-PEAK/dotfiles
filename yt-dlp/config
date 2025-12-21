@@ -1,0 +1,22 @@
+# Always download to this folder
+-o ~/Downloads/YouTube/%(title)s.%(ext)s
+
+# --- Video and audio quality ---
+-f "bv*+ba/b"
+
+# Optional: best video + audio quality
+-f bestvideo+bestaudio
+
+# Optional: merge video and audio automatically
+--merge-output-format mp4
+
+# --- Subtitles (optional, auto English if available) ---
+--write-auto-subs
+--sub-lang en
+--convert-subs srt
+
+# --- Progress and speed settings ---
+--console-title
+--no-mtime
+--newline
+

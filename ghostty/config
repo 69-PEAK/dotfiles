@@ -1,0 +1,97 @@
+# {ghostty +list-themes}
+theme = "dark:Catppuccin Mocha,light:Catppuccin Latte"
+
+# Colors
+# background = #1a1a1a
+# foreground = #b2bec3
+# cursor-color = #FFA500
+# cursor-text = #cdd6f4
+# selection-background = #353749
+# selection-foreground = #cdd6f4
+# split-divider-color = #313244
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = false
+adjust-cursor-thickness = 2
+shell-integration-features = no-cursor
+
+# MacOS
+# 'official', blueprint`, `chalkboard`, `microchip`, `glass`, `holographic`,`paper`, `retro`, `xray`
+macos-icon = holographic 
+macos-titlebar-style = hidden
+macos-titlebar-proxy-icon = hidden
+macos-icon-frame = plastic
+macos-window-shadow = false
+macos-option-as-alt = right
+macos-window-shadow = false
+macos-option-as-alt = true
+mouse-hide-while-typing = true 
+
+# Application
+quit-after-last-window-closed = true
+confirm-close-surface = false
+quick-terminal-animation-duration = 0.08
+
+# Window
+# background-opacity = 0.70
+# background-blur-radius = 25
+# unfocused-split-opacity = 0.7
+# window-padding-balance = true
+# window-decoration = true
+# window-padding-x = 6,0
+# window-padding-y = 8,0 
+# adjust-cell-height = 30%
+# window-save-state = always 
+
+
+# Fonts
+font-family = "JetBrainsMono Nerd Font"
+font-thicken = false
+font-size = 16
+
+# Keybinds
+keybind = cmd+s=toggle_quick_terminal
+
+# Shaders
+# custom-shader-animation = true
+# https://github.com/hackrmomo/ghostty-shaders
+# custom-shader = shaders/animated-gradient-shader.glsl
+# custom-shader = shaders/bettercrt.glsl
+# custom-shader = shaders/bloom.glsl
+# custom-shader = shaders/bloom1.glsl
+# custom-shader = shaders/bloom075.glsl
+# custom-shader = shaders/bloom060.glsl
+ custom-shader = shaders/bloom050.glsl
+# custom-shader = shaders/bloom025.glsl
+# custom-shader = shaders/bloom050.glsl
+# custom-shader = shaders/bloom060.glsl
+# custom-shader = shaders/bloom075.glsl
+# custom-shader = shaders/bloom1.glsl
+# custom-shader = shaders/crt.glsl
+# custom-shader = shaders/cubes.glsl
+# custom-shader = shaders/dither.glsl
+# custom-shader = shaders/drunkard.glsl
+# custom-shader = shaders/fireworks-rockets.glsl
+# custom-shader = shaders/fireworks.glsl
+# custom-shader = shaders/gears-and-belts.glsl
+# custom-shader = shaders/glitchy.glsl
+# custom-shader = shaders/glow-rgbsplit-twitchy.glsl
+  custom-shader = shaders/gradient-background.glsl
+# custom-shader = shaders/inside-the-matrix.glsl
+# custom-shader = shaders/just-snow.glsl
+# custom-shader = shaders/matrix-hallway.glsl
+# custom-shader = shaders/negative.glsl
+# custom-shader = shaders/retro-terminal.glsl
+# custom-shader = shaders/smoke-and-ghost.glsl
+# custom-shader = shaders/sparks-from-fire.glsl
+# custom-shader = shaders/spotlight.glsl
+# custom-shader = shaders/starfield-colors.glsl
+# custom-shader = shaders/starfield.glsl
+# custom-shader = shaders/tft.glsl
+# custom-shader = shaders/underwater.glsl
+# custom-shader = shaders/water.glsl
+# custom-shader = shaders/cursor_blaze.glsl
+  custom-shader = shaders/cursor_blaze_no_trail.glsl
+  custom-shader = shaders/cursor_smear.glsl
+# custom-shader = shaders/cursor_smear_fade.glsl

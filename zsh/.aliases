@@ -1,0 +1,18 @@
+
+######## ALIASES ##########
+
+alias cls='clear' 
+alias ls='eza --icons --color=always'
+alias la='eza -a --icons --color=always'
+alias ll='eza -la --icons --color=always --git -l'
+alias t='eza --tree --all --level=2'     # Tree view including hidden files
+alias td='eza --tree --only-dirs --level=2'  # Directory-only tree view
+
+# Show ALL alias names
+alias aliases='alias | awk -F"=" "{print \$1}"'
+
+# Show all functions
+alias functions='functions | grep "^my" | awk "{print \$1}"'
+
+# Symlink
+alias linkf='ln -sf'

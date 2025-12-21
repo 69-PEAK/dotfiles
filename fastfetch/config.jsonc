@@ -1,0 +1,246 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    // "type": "kitty",
+    "type": "kitty-direct",
+    // type": "kitty-icat",
+
+    //"source": "~/.config/fastfetch/ascii/cat-fish.txt",
+    "source": "~/.config/fastfetch/images/flower.png",
+
+    "height": 10,
+    // "width": 30,
+    "position": "left",
+
+    "color": {
+      "1": "red",
+      "2": "blue",
+      "3": "cyan",
+      "4": "green",
+      "5": "blue",
+      "6": "white",
+      "7": "red",
+      "9": "reset_",
+    },
+
+    "padding": {
+      "top": 1,
+      "right": 2,
+      "bottom": 1,
+    },
+  },
+  "display": {
+    /* "bar": {
+      "char.elapsed": "/",
+      "char.total": "/",
+      "width": 20,
+    },
+    "percent": {
+      "type": 3,
+      "color": {
+        "green": "red",
+        "yellow": "red",
+      },
+      "ndigits": 0,
+    }, */
+    "key": {
+      "width": 10,
+    },
+    "color": "blink_",
+    "separator": "\u001b[38;5;141m 🔸 \u001b[0m",
+  },
+
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "format": " {6}{7}{#green}{8}{#}",
+      "outputColor": "blue",
+    },
+
+    {
+      "type": "custom",
+      "format": "┌────────────────────── Hardware ──────────────────────┐",
+      "outputColor": "#FFA500",
+      // "outputColor": "#778899",
+    },
+    {
+      "type": "host",
+      "key": " PC ",
+      "keyColor": "red",
+    },
+    {
+      "type": "cpu",
+      "key": "│ ├ ",
+      "keyColor": "red",
+    },
+    {
+      "type": "gpu",
+      "key": "│ ├󰒆 ",
+      "keyColor": "red",
+    },
+    {
+      "type": "disk",
+      "key": "│ ├ ",
+      "folders": "/",
+      //"format": "{size-used} / {size-total} ({size-percentage})",
+      "keyColor": "red",
+    },
+    {
+      "type": "swap",
+      "key": "│ ├SW",
+      "keyColor": "red",
+    },
+    {
+      "type": "memory",
+      "key": "│ ├ ",
+      "keyColor": "red",
+    },
+    {
+      "type": "display",
+      "key": "│ ├ ",
+      "keyColor": "red",
+      "format": "MONITOR ({name}) {width}x{height} @ {refresh-rate}Hz",
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────────────────┘",
+      "outputColor": "#FFA500",
+    },
+    {
+      "type": "custom",
+      "format": "┌────────────────────── Software ──────────────────────┐",
+      "outputColor": "#FFA500",
+    },
+    {
+      "type": "os",
+      "key": "󰀵 OS ",
+      "keyColor": "#FFC0CB",
+    },
+    {
+      "type": "kernel",
+      "key": "│ ├ ",
+      "keyColor": "#FFC0CB",
+    },
+    {
+      "type": "packages",
+      "key": "│ ├󰏖 ",
+      "keyColor": "#FFC0CB",
+    },
+    {
+      "type": "localip",
+      "key": "│ ├IP",
+      "keyColor": "#FFC0CB",
+    },
+    /*{
+      "type": "publicip",
+      "key": "│ ├PIP",
+      "keyColor": "#FFA500",
+      "format": "{ip}",
+      "timeout": 3000
+    },*/
+    {
+      "type": "shell",
+      "key": "│ └ ",
+      "keyColor": "#FFC0CB",
+    },
+    "break",
+    {
+      "type": "custom",
+      "key": " DE ",
+      "format": "Aqua",
+      "keyColor": "#A8D5BA",
+    },
+
+    /*  {
+      "type": "lm",
+      "key": "│ ├ ",
+      "keyColor": "#FF6F00",
+    }, */
+    {
+      "type": "wm",
+      "key": "│ ├ ",
+      "keyColor": "#A8D5BA",
+    },
+    {
+      "type": "wmtheme",
+      "key": "│ ├󰉼 ",
+      "keyColor": "#A8D5BA",
+    },
+    /* { 
+       "type": "command",
+       "key": "│ ├ ",
+       "keyColor": "blue",
+       "text": "pgrep yabai &> /dev/null && echo yabai || echo Quartz Compositor",
+   },*/
+    {
+      "type": "terminal",
+      "key": "│ ├ ",
+      "keyColor": "#A8D5BA",
+    },
+    {
+      "type": "terminalfont",
+      "key": "│ └󰘳 ",
+      "keyColor": "#A8D5BA",
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────────────────┘",
+      "outputColor": "#FFA500",
+    },
+    {
+      "type": "custom",
+      "format": "┌──────────────────────── Misc ────────────────────────┐",
+      "outputColor": "#FFA500",
+    },
+    {
+      "type": "battery",
+      "key": "│ ├󱟢 ",
+      "keyColor": "38;5;42",
+      "showStatus": true,
+    },
+    {
+      "type": "poweradapter",
+      "key": "│ ├󰚥 ",
+      "keyColor": "38;5;42",
+      "showStatus": true,
+    },
+    {
+      "type": "cursor",
+      "key": "│ ├ ",
+      "keyColor": "38;5;42",
+    },
+    {
+      "type": "font",
+      "key": "│ ├ ",
+      "keyColor": "38;5;42",
+    },
+    {
+      "type": "sound",
+      "key": "│ ├ ",
+      "keyColor": "38;5;42",
+    },
+    {
+      "type": "uptime",
+      "key": "│ └󰅐 ",
+      "keyColor": "38;5;42",
+    },
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────────────────┘",
+      "outputColor": "#FFA500",
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m",
+    },
+    /* {
+      "type": "colors",
+      "paddingLeft": 27,
+      "symbol": "star",
+    },*/
+    "break",
+  ],
+}
