@@ -1,7 +1,7 @@
 -- ============================================================================
 -- FILE: ~/.config/nvim/lua/plugins/none-ls.lua
 -- ============================================================================
--- none-ls.nvim: null-ls replacement
+
 return {
 	"nvimtools/none-ls.nvim",
 	dependencies = {

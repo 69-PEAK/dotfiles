@@ -7,12 +7,22 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
+-- Options
+vim.opt.cmdheight = 0
+vim.opt.equalalways = false
+
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"
 
 -- Leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+-- Window navigation
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
+vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
+vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
 
 -- Close floating windows with q (safe for macros)
 vim.keymap.set("n", "q", function()
@@ -43,6 +53,3 @@ vim.keymap.set("n", "<Esc>", function()
 	end
 end, { desc = "Smart Esc: close float/qf or clear hlsearch", silent = true })
 
--- Options
-vim.opt.cmdheight = 0
-vim.opt.equalalways = false

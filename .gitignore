@@ -1,3 +1,12 @@
 .DS_Store
-.zsh_history
-.zcompdump
+
+# zsh runtime state
+zsh/.zsh_sessions/
+zsh/.zsh_history
+zsh/.zcompdump
+
+# Tmux
+tmux/resurrect/
+tmux/tmuxinator/
+
+

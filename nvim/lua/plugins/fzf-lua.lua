@@ -3,129 +3,137 @@
 -- ============================================================================
 return {
 	"ibhagwan/fzf-lua",
-	dependencies = { "nvim-tree/nvim-web-devicons" }, -- For nice icons (optional but recommended)
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		local fzf = require("fzf-lua")
 		
-      -- UI Setup
-		fzf.setup("telescope", { 
+		fzf.setup({
+			-- Window options
 			winopts = {
-				height = 0.80,
-				width = 0.87,
-				row = 0.35,
-				col = 0.50,
-				border = "rounded",
+				height = 0.60,              -- window height: 0.0-1.0 (percentage) or >1 (lines)
+				width = 0.75,               -- window width: 0.0-1.0 (percentage) or >1 (columns)
+				row = 0.5,                  -- vertical position: 0.0-1.0
+				col = 0.5,                  -- horizontal position: 0.0-1.0
+				border = "rounded",         -- border style: single|double|rounded|solid|shadow|none
 				preview = {
-					layout = "horizontal", -- Always horizontal (preview on right)
-					horizontal = "right:55%", -- ~55% preview width (matches your old Telescope)
-					title = true,
-					scrollbar = "float",
-					scrollchars = { "┃", "" }, -- Nice scrollbar look
+					layout = "flex",              -- layout: flex adapts to window size automatically
+					flip_columns = 120,           -- switch to vertical when width < 120 cols
+					horizontal = "right:50%",     -- position: right:N%|left:N%
+					vertical = "down:45%",        -- vertical layout if window too narrow
+					title = true,                 -- show preview title
+					title_pos = "center",         -- title position: left|center|right
+					scrollbar = "float",          -- scrollbar: float|border|none
+					scrollchars = { "┃", "" },    -- scrollbar characters [thumb, track]
 				},
 			},
+			
+			-- Key mappings
 			keymap = {
 				builtin = {
 					["<C-j>"] = "preview-page-down",
 					["<C-k>"] = "preview-page-up",
+					["<C-d>"] = "preview-page-down",
+					["<C-u>"] = "preview-page-up",
+					["<F1>"] = "toggle-help",
 				},
 				fzf = {
 					["ctrl-q"] = "select-all+accept",
+					["ctrl-h"] = "toggle-preview",
+					["ctrl-l"] = "toggle-preview",
+					["tab"] = "toggle+down",      
+					["shift-tab"] = "toggle+up",
+					["ctrl-a"] = "toggle-all",
 				},
 			},
+			
+			-- fzf binary options
+			fzf_opts = {
+				["--layout"] = "reverse",     -- layout: reverse|default
+				["--info"] = "default",       -- info style: default|inline|inline-right|hidden
+				["--multi"] = "",             -- enable multi-select mode
+				["--no-separator"] = "",      -- hide separator line
+				["--border"] = "none",        -- border: none|rounded|sharp|horizontal|vertical
+			},
+			
+			-- Custom Catppuccin Mocha colors for fzf
+			fzf_colors = {
+				["fg"] = { "fg", "CursorLine" },      -- foreground text
+				["bg"] = { "bg", "Normal" },          -- background
+				["hl"] = { "fg", "Comment" },         -- highlighted match text
+				["fg+"] = { "fg", "Normal" },         -- selected line foreground
+				["bg+"] = { "bg", "CursorLine" },     -- selected line background
+				["hl+"] = { "fg", "Statement" },      -- highlighted match in selected line
+				["info"] = { "fg", "PreProc" },       -- info line (count)
+				["prompt"] = { "fg", "Conditional" }, -- prompt character
+				["pointer"] = { "fg", "Exception" },  -- cursor/pointer (▶)
+				["marker"] = { "fg", "Keyword" },     -- multi-select marker (✓)
+				["spinner"] = { "fg", "Label" },      -- loading spinner
+				["header"] = { "fg", "Comment" },     -- header text
+				["gutter"] = { "bg", "Normal" },      -- gutter background
+			},
+			
+			-- Preview configuration
 			previewers = {
 				builtin = {
-					treesitter = { enable = false }, -- Keeps it fast
+					treesitter = { enabled = false },  -- syntax highlight: true (slower) | false (faster)
 				},
 			},
+			
+			-- File search configuration
 			files = {
-				fd_opts = "--hidden --exclude=.git --type f",
+				fd_opts = "--hidden --exclude=.git --type f",  -- fd options: --hidden shows dotfiles
 			},
+			
+			-- Grep search configuration
 			grep = {
 				rg_opts = "--hidden --column --line-number --no-heading --color=always --smart-case -g '!.git'",
+				-- rg options: --hidden (dotfiles) | --smart-case (case-insensitive unless uppercase) | -g '!pattern' (exclude)
 			},
 		})
 
-		-- Register fzf-lua as the handler for vim.ui.select (replaces telescope-ui-select)
+		-- Register fzf-lua for vim.ui.select
 		fzf.register_ui_select()
 
 		local opts = { silent = true, noremap = true }
 
 		-- Files
 		vim.keymap.set("n", "<leader>ff", fzf.files, opts)
-
-		-- Live grep (search in files)
 		vim.keymap.set("n", "<leader>fg", fzf.live_grep, opts)
-
-		-- Grep word under cursor
 		vim.keymap.set("n", "<leader>fw", fzf.grep_cword, opts)
-
-		-- Buffers
 		vim.keymap.set("n", "<leader>fb", fzf.buffers, opts)
-
-		-- Recent files
 		vim.keymap.set("n", "<leader>fr", fzf.oldfiles, opts)
-
-		-- Help tags
 		vim.keymap.set("n", "<leader>fh", fzf.help_tags, opts)
-
-		-- Command history
 		vim.keymap.set("n", "<leader>fc", fzf.command_history, opts)
-
-		-- Search history
 		vim.keymap.set("n", "<leader>fs", fzf.search_history, opts)
-
-		-- Keymaps
 		vim.keymap.set("n", "<leader>fk", fzf.keymaps, opts)
-
-		-- Current buffer fuzzy find
 		vim.keymap.set("n", "<leader>fl", fzf.lines, opts)
-
-		-- Resume last picker
 		vim.keymap.set("n", "<leader>fp", fzf.resume, opts)
-
-		-- Marks
 		vim.keymap.set("n", "<leader>fm", fzf.marks, opts)
-
-		-- Registers
 		vim.keymap.set("n", "<leader>fR", fzf.registers, opts)
-
-		-- Colorschemes
 		vim.keymap.set("n", "<leader>ft", fzf.colorschemes, opts)
 
-		-- Git files
+		-- Git
 		vim.keymap.set("n", "<leader>gf", fzf.git_files, opts)
-
-		-- Git commits
 		vim.keymap.set("n", "<leader>gc", fzf.git_commits, opts)
-
-		-- Git buffer commits
 		vim.keymap.set("n", "<leader>gC", fzf.git_bcommits, opts)
-
-		-- Git status
 		vim.keymap.set("n", "<leader>gs", fzf.git_status, opts)
-
-		-- Git branches
 		vim.keymap.set("n", "<leader>gb", fzf.git_branches, opts)
 
-		-- LSP references
+		-- LSP
 		vim.keymap.set("n", "gr", fzf.lsp_references, opts)
-
-		-- LSP type definitions
 		vim.keymap.set("n", "gt", fzf.lsp_typedefs, opts)
-
-		-- LSP implementations
 		vim.keymap.set("n", "gi", fzf.lsp_implementations, opts)
-
-		-- LSP document symbols
 		vim.keymap.set("n", "<leader>lsd", fzf.lsp_document_symbols, opts)
-
-		-- LSP workspace symbols
 		vim.keymap.set("n", "<leader>lsw", fzf.lsp_workspace_symbols, opts)
-
-		-- LSP diagnostics
 		vim.keymap.set("n", "<leader>ld", fzf.diagnostics_workspace, opts)
 
-		-- Treesitter symbols
+		-- Treesitter
 		vim.keymap.set("n", "<leader>ts", fzf.treesitter, opts)
+		
+		-- Quickfix navigation
+		vim.keymap.set("n", "<C-n>", ":cnext<CR>", opts)
+		vim.keymap.set("n", "<C-p>", ":cprev<CR>", opts)
+		vim.keymap.set("n", "<leader>qo", ":copen<CR>", opts)
+		vim.keymap.set("n", "<leader>qc", ":cclose<CR>", opts)
 	end,
 }

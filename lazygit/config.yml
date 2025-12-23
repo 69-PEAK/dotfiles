@@ -1,0 +1,316 @@
+# ============================================================================
+# FILE: ~/.config/lazygit/config.yml
+# ============================================================================
+# Lazygit configuration file
+
+gui:
+  # Nerd fonts icons
+  nerdFontsVersion: "3"
+  # Theme
+  theme:
+    lightTheme: false
+    activeBorderColor:
+      - "#7AA2F7"
+      - bold
+    inactiveBorderColor:
+      - "#3B4261"
+    optionsTextColor:
+      - "#7DCFFF"
+    selectedLineBgColor:
+      - "#283457"
+    cherryPickedCommitBgColor:
+      - "#BB9AF7"
+    cherryPickedCommitFgColor:
+      - "#C0CAF5"
+    unstagedChangesColor:
+      - "#F7768E"
+    defaultFgColor:
+      - "#C0CAF5"
+      # stagedChangesColor:      # Color of the staged changes indicator
+      #   - "#9ECE6A"
+      # untrackedFilesColor:     # Color of icons for untracked files (e.g. new files)
+      #   - "#E0AF68"
+      # selectedRangeBgColor:    # Background for visually selecting multiple rows
+      #   - "#2d2d2d"
+      # selectedLineFgColor:     # Foreground (text color) for the selected row
+      #   - "#ffffff"
+      # searchMatchColor:        # Highlight for search matches
+      #   - "#b4f9f8"
+      # markedBaseCommitColor:   # Color for base commit in rebase
+      #   - "#ff9e64"
+      # commitHashColor:         # The color of commit hashes in the UI
+      #   - "#bb9af7"
+      # authorColor:             # The color of commit author text
+      #   - "#a9b1d6"
+  # Show file icons
+  showFileTree: true
+  showRandomTip: false
+  showCommandLog: false
+  # Mouse support
+  mouseEvents: true
+  # Commit length
+  commitLength:
+    show: true
+  # Skip hooks
+  skipHookPrefix: WIP
+  # Expand focused side panel
+  expandFocusedSidePanel: false
+  # Main panel split mode: 'flexible' | 'horizontal' | 'vertical'
+  mainPanelSplitMode: 'flexible'
+  # Language (leave empty for system default)
+  language: ''
+  # Time format
+  timeFormat: '02 Jan 06'
+  # Short time format  
+  shortTimeFormat: '15:04'
+git:
+  # Paging
+  pagers:
+    - colorArg: always
+      useConfig: false
+  # Commit message
+  commit:
+    signOff: false
+    autoWrapCommitMessage: true
+    autoWrapWidth: 72
+  # Merging
+  merging:
+    manualCommit: false
+    args: ''
+  # Pull
+  pull:
+    mode: 'merge' # 'merge', 'rebase', 'ff-only'
+  # Push  
+  skipHookPrefix: WIP
+  # Auto fetch
+  autoFetch: true
+  autoRefresh: true
+  fetchAll: true
+  # Branch log order
+  branchLogCmd: 'git log {{branchName}} --oneline --decorate --graph --date=short --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ad%C(reset) %s %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)"'
+  # Disable force pushing
+  disableForcePushing: false
+  # Parse emoji
+  parseEmoji: true
+  # Diff context size
+  diffContextSize: 3
+  allBranchesLogCmds:
+    - git log --oneline --decorate --graph --all --date=short --pretty=format:"%C(yellow)%h%C(reset) %C(blue)%ad%C(reset) %s %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)"
+# Custom commands
+customCommands:
+  - key: '<c-p>'
+    description: 'Push to current branch'
+    context: 'global'
+    command: 'git push origin {{.SelectedLocalBranch.Name}}'
+    loadingText: 'Pushing...'
+  - key: '<c-a>'
+    description: 'Amend commit without editing'
+    context: 'files'
+    command: 'git commit --amend --no-edit'
+    loadingText: 'Amending...'
+  - key: 'P'
+    description: 'Pull with rebase'
+    context: 'global'
+    command: 'git pull --rebase'
+    loadingText: 'Pulling with rebase...'
+  - key: '<c-r>'
+    description: 'Reset to origin/main'
+    context: 'localBranches'
+    prompts:
+      - type: 'confirm'
+        title: 'Reset branch'
+        body: 'Are you sure you want to reset {{.SelectedLocalBranch.Name}} to origin/main?'
+    command: 'git reset --hard origin/main'
+  - key: 'C'
+    description: 'Conventional commit'
+    context: 'files'
+    prompts:
+      - type: 'menu'
+        title: 'Commit type'
+        options:
+          - name: 'feat'
+            description: 'A new feature'
+            value: 'feat'
+          - name: 'fix'
+            description: 'A bug fix'
+            value: 'fix'
+          - name: 'docs'
+            description: 'Documentation changes'
+            value: 'docs'
+          - name: 'style'
+            description: 'Code style changes'
+            value: 'style'
+          - name: 'refactor'
+            description: 'Code refactoring'
+            value: 'refactor'
+          - name: 'test'
+            description: 'Test changes'
+            value: 'test'
+          - name: 'chore'
+            description: 'Chore/maintenance'
+            value: 'chore'
+      - type: 'input'
+        title: 'Scope (optional)'
+        key: 'Scope'
+        initialValue: ''
+      - type: 'input'
+        title: 'Message'
+        key: 'Message'
+        initialValue: ''
+      - type: 'confirm'
+        title: 'Commit'
+        body: 'Commit with message: {{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}: {{.Form.Message}}'
+    command: 'git commit -m "{{.Form.Type}}{{if .Form.Scope}}({{.Form.Scope}}){{end}}: {{.Form.Message}}"'
+# Refresh settings
+refresher:
+  refreshInterval: 10 # seconds
+  fetchInterval: 60 # seconds
+# Update settings
+update:
+  method: prompt # 'prompt' | 'background' | 'never'
+  days: 14
+# Confirmation dialogs
+confirmOnQuit: false
+# Quit on ESC
+quitOnTopLevelReturn: false
+# Disable startup popup
+disableStartupPopups: false
+# Not a repository behavior
+notARepository: 'prompt' # 'prompt' | 'create' | 'skip' | 'quit'
+# Prompt to return from subprocess
+promptToReturnFromSubprocess: true
+# Keybindings
+keybinding:
+  universal:
+    quit: 'q'
+    quit-alt1: '<c-c>'
+    return: '<esc>'
+    quitWithoutChangingDirectory: 'Q'
+    togglePanel: '<tab>'
+    prevItem: '<up>'
+    nextItem: '<down>'
+    prevItem-alt: 'k'
+    nextItem-alt: 'j'
+    prevPage: ','
+    nextPage: '.'
+    scrollLeft: 'H'
+    scrollRight: 'L'
+    gotoTop: '<'
+    gotoBottom: '>'
+    toggleRangeSelect: 'v'
+    rangeSelectDown: '<s-down>'
+    rangeSelectUp: '<s-up>'
+    prevBlock: '<left>'
+    nextBlock: '<right>'
+    prevBlock-alt: 'h'
+    nextBlock-alt: 'l'
+    nextMatch: 'n'
+    prevMatch: 'N'
+    startSearch: '/'
+    optionMenu: <disabled>
+    optionMenu-alt1: '?'
+    select: '<space>'
+    goInto: '<enter>'
+    confirm: '<enter>'
+    confirmInEditor: '<a-enter>'
+    remove: 'd'
+    new: 'n'
+    edit: 'e'
+    openFile: 'o'
+    scrollUpMain: '<pgup>'
+    scrollDownMain: '<pgdown>'
+    scrollUpMain-alt1: 'K'
+    scrollDownMain-alt1: 'J'
+    scrollUpMain-alt2: '<c-u>'
+    scrollDownMain-alt2: '<c-d>'
+    executeShellCommand: ':'
+    createRebaseOptionsMenu: 'm'
+    pushFiles: 'P'
+    pullFiles: 'p'
+    refresh: 'R'
+    createPatchOptionsMenu: '<c-p>'
+    nextTab: ']'
+    prevTab: '['
+    nextScreenMode: '+'
+    prevScreenMode: '_'
+    undo: 'z'
+    redo: '<c-z>'
+    filteringMenu: '<c-s>'
+    diffingMenu: 'W'
+    diffingMenu-alt: '<c-e>'
+    copyToClipboard: '<c-o>'
+    openRecentRepos: '<c-r>'
+    submitEditorText: '<enter>'
+    extrasMenu: '@'
+    toggleWhitespaceInDiffView: '<c-w>'
+    increaseContextInDiffView: '}'
+    decreaseContextInDiffView: '{'
+  files:
+    commitChanges: 'c'
+    commitChangesWithoutHook: 'w'
+    amendLastCommit: 'A'
+    commitChangesWithEditor: 'C'
+    findBaseCommitForFixup: '<c-f>'
+    confirmDiscard: 'x'
+    ignoreFile: 'i'
+    refreshFiles: 'r'
+    stashAllChanges: 's'
+    viewStashOptions: 'S'
+    toggleStagedAll: 'a'
+    viewResetOptions: 'D'
+    fetch: 'f'
+    toggleTreeView: '`'
+    openMergeOptions: 'M'
+    openStatusFilter: '<c-b>'
+  branches:
+    createPullRequest: 'o'
+    viewPullRequestOptions: 'O'
+    copyPullRequestURL: '<c-y>'
+    checkoutBranchByName: 'c'
+    forceCheckoutBranch: 'F'
+    rebaseBranch: 'r'
+    renameBranch: 'R'
+    mergeIntoCurrentBranch: 'M'
+    viewGitFlowOptions: 'i'
+    fastForward: 'f'
+    createTag: 'T'
+    pushTag: 'P'
+    setUpstream: 'u'
+    fetchRemote: 'f'
+  commits:
+    squashDown: 's'
+    renameCommit: 'r'
+    renameCommitWithEditor: 'R'
+    viewResetOptions: 'g'
+    markCommitAsFixup: 'f'
+    createFixupCommit: 'F'
+    squashAboveCommits: 'S'
+    moveDownCommit: '<c-j>'
+    moveUpCommit: '<c-k>'
+    amendToCommit: 'A'
+    resetCommitAuthor: 'a'
+    pickCommit: 'p'
+    revertCommit: 't'
+    cherryPickCopy: 'C'
+    pasteCommits: 'V'
+    markCommitAsBaseForRebase: 'B'
+    tagCommit: 'T'
+    checkoutCommit: '<space>'
+    resetCherryPick: '<c-R>'
+    copyCommitAttributeToClipboard: 'y'
+    openLogMenu: '<c-l>'
+    openInBrowser: 'o'
+    viewBisectOptions: 'b'
+    startInteractiveRebase: 'i'
+  stash:
+    popStash: 'g'
+    renameStash: 'r'
+  commitFiles:
+    checkoutCommitFile: 'c'
+  main:
+    toggleSelectHunk: 'a'
+    pickBothHunks: 'b'
+  submodules:
+    init: 'i'
+    update: 'u'
+    bulkMenu: 'b'

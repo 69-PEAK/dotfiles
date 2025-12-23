@@ -1,10 +1,12 @@
 -- ============================================================================
 -- FILE: ~/.config/nvim/lua/plugins/alpha.lua
 -- ============================================================================
--- Dashboard using alpha.lua
+
+-- Disabled:  using snacks.nvim dashboard instead
 
 return {
 	"goolord/alpha-nvim",
+	enabled = false,
 	dependencies = { "nvim-tree/nvim-web-devicons", "ahmedkhalf/project.nvim" },
 	config = function()
 		require("project_nvim").setup({
@@ -97,10 +99,11 @@ return {
 			callback = function()
 				vim.opt.showtabline = 0
 				vim.opt.laststatus = 0
-				vim.opt.cursorline = false   -- disable cursorline highlight
+				vim.opt.cursorline = false -- disable cursorline highlight
 				vim.opt.cursorcolumn = false -- just in case
 				vim.cmd("highlight Cursor blend=100") -- make cursor fully transparent
-				vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/rCursor,sm:block-Cursor" -- optional: keep shape but invisible via blend
+				vim.opt.guicursor =
+					"n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/rCursor,sm:block-Cursor" -- optional: keep shape but invisible via blend
 			end,
 		})
 

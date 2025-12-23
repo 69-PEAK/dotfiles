@@ -1,3 +1,22 @@
+########################### COLOR SCRIPT #########################################
+color() {                          # Define a function named "color"
+    if [[ $# -eq 0 ]]; then       # If NO arguments passed (you just type "color")
+        echo "📦 Available colorscript patterns:\n"
+        colorscript -l             # Show list of all patterns
+        echo "\n💡 Usage:"         # Print helpful usage instructions
+        echo "  color <pattern>..."
+        
+    elif [[ "$1" == "list" ]]; then   # If you type "color list"
+        colorscript -l                 # Just show the list
+        
+    elif [[ "$1" == "random" ]]; then # If you type "color random"
+        colorscript -r                 # Show a random pattern
+        
+    else                               # Otherwise (you typed "color square")
+        colorscript -e "$1"            # Run colorscript with your pattern name
+    fi
+}
+
 ########################### BATTERY INFORMATION ################################
 mybatinfo() {
     ioreg -rn AppleSmartBattery | awk -F'= ' '
@@ -38,4 +57,38 @@ mybatinfo() {
     }'
 }
  
-###############################################################################
+############################### Clean Branch history #######################################
+clean_branch() {
+  local branch="${1:-main}"
+  local orphan_branch="clean-$branch"
+
+  # Ensure everything is committed.
+  git status
+  echo "Check: Ensure all work committed and remote is up to date."
+
+  # Create orphan branch with *no* history
+  git checkout --orphan "$orphan_branch"
+  
+  # Remove all tracked files from index
+  git rm -rf .            # removes from git index, not disk
+
+  # Add and commit up-to-date files
+  git add .
+  git commit -m "chore: fresh start with up-to-date files"
+
+  # Delete old branch
+  git branch -D "$branch"
+  
+  # Rename orphan branch to original name
+  git branch -m "$branch"
+  
+  # Force-push to remote (overwrites history!)
+  git push --force origin "$branch"
+
+  # Link local branch to remote (upstream)
+  git branch --set-upstream-to="origin/$branch" "$branch"
+
+  echo "Done! Branch '$branch' is a clean slate and now tracks origin/$branch."
+}
+
+#############################################################################################

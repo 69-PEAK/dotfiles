@@ -21,10 +21,6 @@ ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/.zcompdump"
 autoload -Uz compinit
 compinit -d "$ZSH_COMPDUMP"
 
-# Default editor
-export EDITOR="nvim"
-export VISUAL="nvim"
-
 #EZA COlORING CONFIG
 export EZA_COLORS="di=1;94:fi=1;32:ln=1;96:ex=1;32:pi=1;33:so=1;35:bd=1;33:cd=1;33:or=1;31:mi=1;31"
 
@@ -87,14 +83,23 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white,dim'
 [ -f /opt/homebrew/opt/fzf/shell/key-bindings.zsh ] && source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
 [ -f /opt/homebrew/opt/fzf/shell/completion.zsh ] && source /opt/homebrew/opt/fzf/shell/completion.zsh
 # Source fzf configuration
-[ -f "$HOME/github/dotfiles/zsh/fzf.zsh" ] && source "$HOME/github/dotfiles/zsh/fzf.zsh"
+[ -f "$HOME/github/dotfiles/fzf/fzf.zsh" ] && source "$HOME/github/dotfiles/fzf/fzf.zsh"
 
 # Source Starship
 eval "$(STARSHIP_CONFIG="$HOME/github/dotfiles/starship/starship.toml" starship init zsh)"
+
+# Tmuxinator path
+export TMUXINATOR_CONFIG="$HOME/.config/tmux/tmuxinator"
+
+# Luarocks paths for Neovim image support
+export LUA_PATH="$HOME/.luarocks/share/lua/5.1/?.lua;$HOME/.luarocks/share/lua/5.1/?/init. lua;;"
+export LUA_CPATH="$HOME/.luarocks/lib/lua/5.1/?.so;;"
 
 # Force non-Vi keybindings
 bindkey -e
 bindkey '^X^V' undefined-key
 unset KEYTIMEOUT
 
+# File limit
+ulimit -n 10240
 

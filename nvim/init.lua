@@ -31,3 +31,12 @@ vim.opt.rtp:prepend(lazypath)
 -- Load all plugins from lua/plugins/ directory
 -- Lazy will automatically load all .lua files in that folder
 require("lazy").setup("plugins")
+
+-- Added for supporessing image-clip notfiication (its a bug of image-clip)
+local orig_notify = vim.notify
+vim.notify = function(msg, level, opts)
+  if msg and msg:lower():find("not an image") then
+    return
+  end
+  return orig_notify(msg, level, opts)
+end

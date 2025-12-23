@@ -104,7 +104,7 @@ return {
 				},
 			})
 
-			-- clangd: Enable clang-tidy for powerful C/C++ diagnostics
+			-- clangd: Enable clang-tidy for C/C++ diagnostics
 			vim.lsp.config("clangd", {
 				cmd = {
 					"clangd",
