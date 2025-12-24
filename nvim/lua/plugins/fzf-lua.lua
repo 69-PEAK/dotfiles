@@ -110,8 +110,7 @@ return {
 		vim.keymap.set("n", "<leader>fp", fzf.resume, opts)
 		vim.keymap.set("n", "<leader>fm", fzf.marks, opts)
 		vim.keymap.set("n", "<leader>fR", fzf.registers, opts)
-		vim.keymap.set("n", "<leader>ft", fzf.colorschemes, opts)
-
+		
 		-- Git
 		vim.keymap.set("n", "<leader>gf", fzf.git_files, opts)
 		vim.keymap.set("n", "<leader>gc", fzf.git_commits, opts)
@@ -135,5 +134,47 @@ return {
 		vim.keymap.set("n", "<C-p>", ":cprev<CR>", opts)
 		vim.keymap.set("n", "<leader>qo", ":copen<CR>", opts)
 		vim.keymap.set("n", "<leader>qc", ":cclose<CR>", opts)
+		
+---------------------- Dynamic Theme Switching  --------------------------------
+-- Path for saving theme selection
+local theme_file = vim.fn.stdpath("config") .. "/last_theme.txt"
+
+-- Helper: set and save colorscheme + lualine logic
+local function set_theme(name)
+  if not name or #name == 0 then return end
+  if pcall(vim.cmd, "colorscheme " .. name) then
+    -- Set lualine theme depending on colorscheme
+        local lualine_theme
+    -- Dracula for catppuccin EXCEPT catppuccin-latte
+    if (name == "catppuccin") or
+       (name:match("^catppuccin%-") and name ~= "catppuccin-latte") then
+      lualine_theme = "dracula"
+    else
+      lualine_theme = "auto"
+    end
+    require("lualine").setup({ options = { theme = lualine_theme } })
+    local f = io.open(theme_file, "w")
+    if f then f:write(name) f:close() end
+  else
+    vim.notify("Theme not found: " .. name, vim.log.levels.ERROR)
+  end
+end
+
+
+-- Apply last theme on startup
+local f = io.open(theme_file, "r")
+if f then set_theme(f:read("*l")) f:close() end
+
+-- FZF color scheme picker
+vim.keymap.set("n", "<leader>ft", function()
+  require("fzf-lua").colorschemes({
+    actions = {
+      ["default"] = function(selected)
+        set_theme(selected[1])
+      end
+    }
+  })
+end, { noremap = true, silent = true })
+-----------------------------------------------------------------------------------------
 	end,
 }
