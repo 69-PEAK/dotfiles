@@ -24,6 +24,20 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window" })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to top window" })
 
+-- Terminal keybind
+vim.keymap.set("n", "<leader>t", function()
+	if vim.bo.buftype == "terminal" then
+		vim.cmd("close")
+	else
+		vim.cmd("botright split | resize 12 | terminal")
+		vim.cmd("startinsert")
+	end
+end, { silent = true })
+
+vim.keymap.set("t", "<Esc>", function()
+	vim.cmd("close")
+end, { silent = true })
+
 -- Close floating windows with q (safe for macros)
 vim.keymap.set("n", "q", function()
 	if vim.api.nvim_win_get_config(vim.api.nvim_get_current_win()).relative ~= "" then
@@ -52,4 +66,3 @@ vim.keymap.set("n", "<Esc>", function()
 		vim.cmd("nohlsearch")
 	end
 end, { desc = "Smart Esc: close float/qf or clear hlsearch", silent = true })
-

@@ -40,3 +40,9 @@ vim.notify = function(msg, level, opts)
   end
   return orig_notify(msg, level, opts)
 end
+
+-- Always hide ~ tildes
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  command = "hi EndOfBuffer guifg=bg guibg=bg"
+})

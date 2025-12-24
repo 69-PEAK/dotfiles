@@ -91,4 +91,42 @@ clean_branch() {
   echo "Done! Branch '$branch' is a clean slate and now tracks origin/$branch."
 }
 
-#############################################################################################
+###################################### Spicetify Quick Apply ######################################
+spice() {
+    local theme_name="$1"
+    local color_scheme="$2"
+
+    if [ -z "$theme_name" ]; then
+        echo "Usage: spice <theme_name> [color_scheme]"
+        return 1
+    fi
+
+    local theme_dir="$HOME/.config/spicetify/Themes/$theme_name"
+
+    # Check if theme exists
+    if [ ! -d "$theme_dir" ]; then
+        echo "Theme '$theme_name' not found. Available themes:"
+        ls "$HOME/.config/spicetify/Themes"
+        return 1
+    fi
+
+    # Set theme
+    spicetify config current_theme "$theme_name"
+
+    # Handle color scheme
+    if [ -n "$color_scheme" ]; then
+        if ! grep -q "\[$color_scheme\]" "$theme_dir/color.ini"; then
+            echo "Color scheme '$color_scheme' not found. Available schemes:"
+            grep "^\[" "$theme_dir/color.ini" | tr -d "[]"
+            return 1   # prevent apply if invalid
+        fi
+        spicetify config color_scheme "$color_scheme"
+    fi
+
+    # Apply theme 
+    spicetify apply >/dev/null 2>&1
+
+    echo "Theme '$theme_name' applied${color_scheme:+ with color scheme '$color_scheme'}."
+}
+
+#######################################################################################################

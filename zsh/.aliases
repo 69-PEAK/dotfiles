@@ -16,7 +16,7 @@ alias aliases='alias | awk -F"=" "{print \$1}"'
 alias functions='functions | grep "^my" | awk "{print \$1}"'
 
 # Symlink
-alias linkf='ln -sf'
+alias lf='ln -sf'
 
 # Git aliases
 alias lg='lazygit'

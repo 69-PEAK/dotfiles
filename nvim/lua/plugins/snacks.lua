@@ -1,7 +1,7 @@
 -- ============================================================================
 -- FILE:  ~/. config/nvim/lua/plugins/snacks.lua
 -- ============================================================================
--- Dashboard using snacks. nvim
+-- Dashboard using snacks.nvim
 
 return {
 	"folke/snacks.nvim",
