@@ -39,7 +39,7 @@ return {
 
       window = {
         position = "left",
-        width = 30,
+        width = 25,
         mappings = {
           ["<space>"] = "none",
           ["<C-f>"] = "none",

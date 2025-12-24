@@ -35,14 +35,17 @@ require("lazy").setup("plugins")
 -- Added for supporessing image-clip notfiication (its a bug of image-clip)
 local orig_notify = vim.notify
 vim.notify = function(msg, level, opts)
-  if msg and msg:lower():find("not an image") then
-    return
-  end
-  return orig_notify(msg, level, opts)
+	if msg and msg:lower():find("not an image") then
+		return
+	end
+	return orig_notify(msg, level, opts)
 end
 
 -- Always hide ~ tildes
-vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern = "*",
-  command = "hi EndOfBuffer guifg=bg guibg=bg"
+vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter", "UIEnter" }, {
+	pattern = "*",
+	callback = function()
+		-- Set both termguicolors and standard colors
+		vim.cmd("highlight! EndOfBuffer guifg=bg guibg=bg ctermbg=NONE ctermfg=NONE")
+	end,
 })
