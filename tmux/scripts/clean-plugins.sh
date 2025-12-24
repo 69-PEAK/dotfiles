@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Tmux plugin cleaner - removes plugins not in config
+# Tmux plugin cleaner - removes unused plugins in tmux conf
 
 TMUX_CONF="$HOME/.config/tmux/tmux.conf"
 PLUGIN_DIR="$HOME/.config/tmux/plugins"
