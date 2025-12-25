@@ -35,7 +35,7 @@ Runs daily at 8pm and at system startup, using a macOS Launch Agent.
 
 Make sure to allow **zsh** to run as an extension (otherwise script may not run automatically):
 
-![script](../../../../Library/Caches/com.raycast.macos/Clipboard/9e166bd34229c0858119f3be178e9e90b9eb5cb39ed1cfc217995eb835d7f659.png)
+![script](https://raw.githubusercontent.com/69-PEAK/dotfiles/main/images/readme/brew-script.png)
 
 ---
 
