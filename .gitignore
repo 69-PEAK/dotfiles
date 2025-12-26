@@ -9,4 +9,10 @@ zsh/.zcompdump
 tmux/resurrect/
 tmux/tmuxinator/
 
+# Lazygit
+lazygit/config.yml
+
+# Tig
+tig/theme.tig
+
 

@@ -19,24 +19,50 @@ alias functions='functions | grep "^my" | awk "{print \$1}"'
 alias lf='ln -sf'
 
 # Git aliases
-alias lg='lazygit'
 alias gs='git status'
 alias gss='git submodule status'
+alias gi='git status --ignored'
+
 alias ga='git add'
 alias gc='git commit'
 alias gcm='git commit -m'
+
 alias gp='git push'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
+
 alias gl='git log --oneline --graph --decorate'
 alias gb='git branch'
-alias gco='git checkout'
+
+# Safer branch operations (replace checkout)
+alias gco='git switch'            # use: gco branch-name
+alias gcb='git switch -c'         # use: gcb new-branch
+
+# Diff
 alias gd='git diff'
 alias gds='git diff --staged'
+
+# Restore / reset 
+alias gro='git restore'           # restore file from HEAD/index
+alias gros='git restore --staged' # unstage file
+alias gr='git reset'              # keep for advanced use
+
+# Stash
 alias gstash='git stash'
 alias gpop='git stash pop'
-alias gundo='git reset --soft HEAD~1'   # Undo last commit, keep changes
-alias gi='git status --ignored'
-alias gr='git reset'
+
+# Undo
+alias gundo='git reset --soft HEAD~1'  # undo last commit, keep changes
+
+# lazygit
+alias lg='lazygit'
+
+# tig aliases
+alias tg='tig'
+alias tgs='tig status'
+alias tgb='tig blame'              # Shows who last modified each line of a file
+alias tgsf='tig show'              # usage: tgsf <commit|hash|-|branch|-|ref|>
+alias tgl='tig --all'
+
 
 

@@ -1,11 +1,9 @@
-# ============================================================================
-# FILE: ~/.config/lazygit/config.yml
-# ============================================================================
 # Lazygit configuration file
-
+# Use lazy-theme for changing theme
 gui:
   # Nerd fonts icons
   nerdFontsVersion: "3"
+
   # Show file icons
   showFileTree: true
   showRandomTip: false
@@ -27,42 +25,6 @@ gui:
   timeFormat: '02 Jan 06'
   # Short time format  
   shortTimeFormat: '15:04'
-  # Theme
-  theme:
-    lightTheme: false
-    activeBorderColor:
-      - "#7AA2F7"
-      - bold
-    inactiveBorderColor:
-      - "#3B4261"
-    optionsTextColor:
-      - "#7DCFFF"
-    selectedLineBgColor:
-      - "#283457"
-    cherryPickedCommitBgColor:
-      - "#BB9AF7"
-    cherryPickedCommitFgColor:
-      - "#C0CAF5"
-    unstagedChangesColor:
-      - "#F7768E"
-    defaultFgColor:
-      - "#C0CAF5"
-      # stagedChangesColor:      # Color of the staged changes indicator
-      #   - "#9ECE6A"
-      # untrackedFilesColor:     # Color of icons for untracked files (e.g. new files)
-      #   - "#E0AF68"
-      # selectedRangeBgColor:    # Background for visually selecting multiple rows
-      #   - "#2d2d2d"
-      # selectedLineFgColor:     # Foreground (text color) for the selected row
-      #   - "#ffffff"
-      # searchMatchColor:        # Highlight for search matches
-      #   - "#b4f9f8"
-      # markedBaseCommitColor:   # Color for base commit in rebase
-      #   - "#ff9e64"
-      # commitHashColor:         # The color of commit hashes in the UI
-      #   - "#bb9af7"
-      # authorColor:             # The color of commit author text
-      #   - "#a9b1d6"
 git:
   # Paging
   pagers:
@@ -314,3 +276,6 @@ keybinding:
     init: 'i'
     update: 'u'
     bulkMenu: 'b'
+
+
+
