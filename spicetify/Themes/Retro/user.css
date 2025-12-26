@@ -1039,3 +1039,1384 @@ div:has(> button[aria-label="Switch to video"]) {
 .main-shelf-shelf {
     display: none;
 }
+
+
+
+
+
+
+
+
+/* /*  ================================ */
+ */
+/*     ROOT */
+ */
+/*     ================================ */
+ */
+
+/* /* import */
+ */
+/* find more in https://fonts.google.com/?category=Monospace&sort=popularity */
+ */
+/* @import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Cousine:ital,wght@0,400;0,700;1,400;1,700&family=Cutive+Mono&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Fira+Code:wght@300..700&family=Fira+Mono:wght@400;500;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=M+PLUS+1+Code:wght@100..700&family=Nova+Mono&family=Overpass+Mono:wght@300..700&family=Oxygen+Mono&family=PT+Mono&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Share+Tech+Mono&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&family=Sono:wght@200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne+Mono&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=VT323&family=Xanh+Mono:ital@0;1&display=swap");
+ */
+/* @import url("https://fonts.cdnfonts.com/css/asciid");
+ */
+
+/* /* user settings */
+ */
+/* :root {
+ */
+/*     --font-family: "Pixel Arial 14", monospace;
+ */
+/*     --font-size: 14px;
+ */
+/*     --font-weight: 400;
+ */
+/*     --line-height: 1.2;
+ */
+/* 
+ */
+/*     --font-size-lyrics: 14px;
+ */
+/* 
+ */
+/*     --font-family-header: "asciid";
+ */
+/*     --font-size-multiplier-header: 4;
+ */
+/* 
+ */
+/*     --display-card-image: block;
+ */
+/*     --display-coverart-image: none;
+ */
+/*     --display-header-image: none;
+ */
+/*     --display-sidebar-image: block;
+ */
+/*     --display-tracklist-image: none;
+ */
+/*     --display-spicetify-banner-ascii: none;
+ */
+/*     --display-music-banner-ascii: none;
+ */
+/* 
+ */
+/*     --border-radius: 0px;
+ */
+/*     --border-width: 1px;
+ */
+/*     --border-style: solid;
+ */
+/*     --border-transition: 0.2s ease;
+ */
+/* 
+ */
+/*     --global-nav-margin-top: 40px;
+ */
+/* }
+ */
+
+/* /* font */
+ */
+/* *:not([style*="lyric" i] *, [class*="lyric" i], .main-entityHeader-title) {
+ */
+/*     font-family: var(--font-family) !important;
+ */
+/*     font-size: var(--font-size) !important;
+ */
+/*     font-weight: var(--font-weight) !important;
+ */
+/*     line-height: var(--line-height) !important;
+ */
+/* }
+ */
+/* .lyrics-lyrics-container *,
+ */
+/* .main-nowPlayingView-lyricsContent * {
+ */
+/*     font-family: var(--font-family);
+ */
+/*     font-size: var(--font-size-lyrics);
+ */
+/*     font-weight: var(--font-weight);
+ */
+/*     line-height: var(--line-height);
+ */
+/* }
+ */
+/* .main-entityHeader-title h1,
+ */
+/* .main-entityHeader-title span {
+ */
+/*     font-family: var(--font-family-header) !important;
+ */
+/*     font-size: calc(
+ */
+/*         var(--font-size) * var(--font-size-multiplier-header)
+ */
+/*     ) !important;
+ */
+/*     display: -webkit-box;
+ */
+/*     -webkit-box-orient: vertical;
+ */
+/*     -webkit-line-clamp: 2;
+ */
+/*     line-clamp: 2;
+ */
+/* }
+ */
+
+/* /* images */
+ */
+/* .main-card-imageContainer img,
+ */
+/* .view-homeShortcutsGrid-imageContainer img {
+ */
+/*     display: var(--display-card-image) !important;
+ */
+/* }
+ */
+/* .main-coverSlotCollapsed-container {
+ */
+/*     display: var(--display-coverart-image);
+ */
+/* }
+ */
+/* .main-entityHeader-imageContainer,
+ */
+/* .under-main-view,
+ */
+/* .main-entityHeader-creatorWrapper .main-avatar-avatar,
+ */
+/* .main-entityHeader-imageContainer,
+ */
+/* .playlist-playlist-playlistImageContainer,
+ */
+/* .profile-userOverview-imageContainer {
+ */
+/*     display: var(--display-header-image);
+ */
+/* }
+ */
+/* .main-userWidget-box {
+ */
+/*    background-color: transparent !important;
+ */
+/* }
+ */
+
+/* .x-entityImage-imageContainer img,
+ */
+/* .main-avatar-image {
+ */
+/*     display: var(--display-sidebar-image);
+ */
+/*     background-color: transparent !important;
+ */
+/* }
+ */
+/* .main-trackList-rowImage {
+ */
+/*     display: var(--display-tracklist-image);
+ */
+/* }
+ */
+
+/* /* fix */
+ */
+/* .Root__globalNav {
+ */
+/*     padding: 8px 16px !important;
+ */
+/*     height: unset;
+ */
+/* }
+ */
+/* .spotify__container--is-desktop.spotify__os--is-windows .Root__globalNav,
+ */
+/* .spotify__container--is-desktop.spotify__os--is-macos .Root__globalNav {
+ */
+/*     margin: 0;
+ */
+/*     margin-top: var(--global-nav-margin-top);
+ */
+/* }
+ */
+/* .spotify__container--is-desktop.spotify__os--is-linux .Root__globalNav {
+ */
+/*     margin: 8px 0 0;
+ */
+/* }
+ */
+/* .Root__top-container {
+ */
+/*     --panel-gap: 16px !important;
+ */
+/* }
+ */
+/* .Root__top-bar {
+ */
+/*     border: var(--border-width) solid transparent;
+ */
+/* }
+ */
+/* .Root__nav-bar,
+ */
+/* .main-nowPlayingBar-container {
+ */
+/*     overflow: visible;
+ */
+/* }
+ */
+/* .main-view-container {
+ */
+/*     overflow: hidden;
+ */
+/* }
+ */
+/* section:has(> .main-entityHeader-container),
+ */
+/* div:has(> .main-entityHeader-container) {
+ */
+/*     margin-top: 0;
+ */
+/* }
+ */
+/* .main-entityHeader-container {
+ */
+/*     height: unset !important;
+ */
+/*     min-height: unset !important;
+ */
+/* }
+ */
+/* .main-entityHeader-imageContainerNew {
+ */
+/*     height: 128px;
+ */
+/*     width: 128px;
+ */
+/* }
+ */
+/* .main-topBar-overlay,
+ */
+/* .main-entityHeader-container > div,
+ */
+/* .main-entityHeader-container + div[style*="background-color"],
+ */
+/* .main-entityHeader-container + div > div[style*="background-color"],
+ */
+/* .main-home-homeHeader,
+ */
+/* .main-nowPlayingView-contextItemInfo::before {
+ */
+/*     background-color: transparent !important;
+ */
+/*     background-image: none !important;
+ */
+/*     background: transparent !important;
+ */
+/*     transition: unset !important;
+ */
+/* }
+ */
+/* .main-topBar-background,
+ */
+/* .main-home-filterChipsSection,
+ */
+/* .main-home-filterChipsSection::after,
+ */
+/* .main-trackList-trackListHeader,
+ */
+/* .main-trackList-trackListHeaderStuck.main-trackList-trackListHeader,
+ */
+/* .main-entityHeader-container + div,
+ */
+/* .main-entityHeader-container + div > div {
+ */
+/*     background-color: var(--spice-main) !important;
+ */
+/*     background: var(--spice-main);
+ */
+/*     transition: unset !important;
+ */
+/* }
+ */
+/* .LayoutResizer__resize-bar {
+ */
+/*     cursor: w-resize;
+ */
+/* }
+ */
+/* .LayoutResizer__inline-end:after,
+ */
+/* .LayoutResizer__inline-start:after {
+ */
+/*     background-color: var(--spice-border-inactive);
+ */
+/* }
+ */
+/* .LayoutResizer__resize-bar--resizing.LayoutResizer__inline-start:after,
+ */
+/* .LayoutResizer__resize-bar--resizing.LayoutResizer__inline-end:after {
+ */
+/*     background-color: var(--spice-border-active);
+ */
+/* }
+ */
+/* div[class*="minBlockSize_56px-padding_8px"] {
+ */
+/*     padding: 4px !important;
+ */
+/* }
+ */
+/* .main-trackList-number {
+ */
+/*     top: 0;
+ */
+/* }
+ */
+
+/* /* fullscreen */
+ */
+/* .spotifyinternal-artistnpv .npv-what-is-playing .npv-cover-art,
+ */
+/* .spotifyinternal-artistnpv .npv-what-is-playing .npv-track {
+ */
+/*     bottom: 18em;
+ */
+/* }
+ */
+/* .spotifyinternal-artistnpv .npv-what-is-playing .npv-cover-art {
+ */
+/*     -webkit-transform: scale(0.34375);
+ */
+/*     transform: scale(0.34375);
+ */
+/* }
+ */
+/* .spotifyinternal-artistnpv .npv-what-is-playing .npv-track {
+ */
+/*     -webkit-transform: none;
+ */
+/*     transform: none;
+ */
+/* }
+ */
+/* .npv-main-container .playback-bar {
+ */
+/*     position: unset;
+ */
+/*     width: auto;
+ */
+/* }
+ */
+/* .npv-nowPlayingBar-controls {
+ */
+/*     height: auto;
+ */
+/* }
+ */
+
+/* /* recolor */
+ */
+/* :root {
+ */
+/*     --spice-main-elevated: var(--spice-main);
+ */
+/*     --spice-highlight-elevated: var(--spice-main);
+ */
+/*     --spice-sidebar: var(--spice-main);
+ */
+/*     --spice-player: var(--spice-main);
+ */
+/*     --spice-card: var(--spice-main);
+ */
+/*     --spice-shadow: var(--spice-main);
+ */
+/*     --spice-selected-row: var(--spice-subtext);
+ */
+/*     --spice-button: var(--spice-accent);
+ */
+/*     --spice-button-active: var(--spice-accent-active);
+ */
+/*     --spice-button-disabled: var(--spice-accent-inactive);
+ */
+/*     --spice-tab-active: var(--spice-main);
+ */
+/*     --spice-rgb-main-elevated: var(--spice-rgb-main);
+ */
+/*     --spice-rgb-highlight-elevated: var(--spice-rgb-main);
+ */
+/*     --spice-rgb-sidebar: var(--spice-rgb-main);
+ */
+/*     --spice-rgb-player: var(--spice-rgb-main);
+ */
+/*     --spice-rgb-card: var(--spice-rgb-main);
+ */
+/*     --spice-rgb-shadow: var(--spice-rgb-main);
+ */
+/*     --spice-rgb-selected-row: var(--spice-rgb-subtext);
+ */
+/*     --spice-rgb-button: var(--spice-rgb-accent);
+ */
+/*     --spice-rgb-button-active: var(--spice-rgb-accent-active);
+ */
+/*     --spice-rgb-button-disabled: var(--spice-rgb-accent-inactive);
+ */
+/*     --spice-rgb-tab-active: var(--spice-rgb-main);
+ */
+/* 
+ */
+/*     --font-logo: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+ */
+/* }
+ */
+/* .encore-dark-theme,
+ */
+/* .encore-dark-theme .encore-base-set {
+ */
+/*     --background-press: var(--spice-highlight);
+ */
+/*     --background-elevated-press: var(--spice-main-elevated);
+ */
+/*     --essential-subdued: var(--spice-border-inactive);
+ */
+/*     --decorative-subdued: var(--spice-accent-inactive);
+ */
+/* }
+ */
+/* .encore-dark-theme .encore-bright-accent-set {
+ */
+/*     --background-highlight: var(--spice-button-active) !important;
+ */
+/*     --background-elevated-base: var(--spice-button-active) !important;
+ */
+/*     --background-elevated-highlight: var(--spice-button-active) !important;
+ */
+/*     --background-press: var(--spice-button-active) !important;
+ */
+/*     --background-elevated-press: var(--spice-button-active) !important;
+ */
+/* }
+ */
+/* .Root__top-container,
+ */
+/* .Root__nav-bar {
+ */
+/*     background-color: var(--spice-main);
+ */
+/* }
+ */
+/* .main-playPauseButton-button {
+ */
+/*     background-color: transparent;
+ */
+/*     color: var(--spice-subtext);
+ */
+/* }
+ */
+/* .main-playPauseButton-button:focus,
+ */
+/* .main-playPauseButton-button:hover {
+ */
+/*     transform: none;
+ */
+/*     color: var(--spice-text);
+ */
+/* }
+ */
+/* .view-homeShortcutsGrid-equaliser,
+ */
+/* .main-devicePicker-nowPlayingActiveIcon,
+ */
+/* .main-trackList-playingIcon {
+ */
+/*     filter: grayscale(1) opacity(0.2)
+ */
+/*         drop-shadow(0 0 0 var(--spice-button-active))
+ */
+/*         drop-shadow(0 0 0 var(--spice-button-active))
+ */
+/*         drop-shadow(0 0 0 var(--spice-button-active));
+ */
+/* }
+ */
+/* ::placeholder {
+ */
+/*     color: var(--spice-subtext);
+ */
+/* }
+ */
+/* .main-entityHeader-background,
+ */
+/* .main-entityHeader-backgroundColor,
+ */
+/* .main-entityHeader-overlay,
+ */
+/* .main-actionBarBackground-background,
+ */
+/* .main-buddyFeed-container,
+ */
+/* .main-nowPlayingView-content.main-nowPlayingView-gradient {
+ */
+/*     background-color: transparent !important;
+ */
+/*     background-image: none !important;
+ */
+/*     background: transparent !important;
+ */
+/*     transition: unset !important;
+ */
+/* }
+ */
+/* .progress-bar {
+ */
+/*     --fg-color: var(--spice-button-disabled);
+ */
+/*     --bg-color: var(--spice-button-disabled);
+ */
+/* }
+ */
+/* .playback-bar__progress-time-elapsed,
+ */
+/* .main-playbackBarRemainingTime-container {
+ */
+/*     mix-blend-mode: difference;
+ */
+/*     color: var(--spice-button-active);
+ */
+/* }
+ */
+/* .main-trackList-placeholder {
+ */
+/*     background-color: var(--background-base);
+ */
+/*     background-blend-mode: color-dodge;
+ */
+/* }
+ */
+/* .main-trackList-trackListRow:focus-within,
+ */
+/* .main-trackList-trackListRow:hover,
+ */
+/* .main-contextMenu-menuItemButton:hover,
+ */
+/* .main-contextMenu-menuItemButton:not([aria-checked="true"]):focus,
+ */
+/* .main-card-card:hover,
+ */
+/* .main-card-card[data-context-menu-open="true"],
+ */
+/* [class*="listRow-isInteractive"]:hover,
+ */
+/* [class*="listRow-isInteractive"]:hover::after {
+ */
+/*     background-color: rgba(var(--spice-rgb-highlight), 0.5) !important;
+ */
+/* }
+ */
+/* .main-trackList-trackListRow.main-trackList-selected,
+ */
+/* .main-trackList-trackListRow.main-trackList-selected:hover {
+ */
+/*     background-color: var(--spice-highlight) !important;
+ */
+/* }
+ */
+/* .x-entityImage-imageContainer,
+ */
+/* .main-card-imageContainer > div:first-child {
+ */
+/*     background-color: var(--card-color, var(--spice-border-inactive));
+ */
+/* }
+ */
+/* .main-avatar-avatar {
+ */
+/*     background-color: var(--spice-main) !important;
+ */
+/* }
+ */
+/* .main-entityHeader-title h1,
+ */
+/* .main-entityHeader-title span {
+ */
+/*     color: var(--spice-banner);
+ */
+/* }
+ */
+/* div[style*="--text-subdued: rgba(255, 255, 255, 0.7);"] {
+ */
+/*     --text-subdued: var(--spice-subtext) !important;
+ */
+/* }
+ */
+/* .search-searchCategory-contentArea {
+ */
+/*     --carousel-start-chevron-gradient: var(--spice-main);
+ */
+/*     --carousel-end-chevron-gradient: var(--spice-main);
+ */
+/* }
+ */
+
+/* /* pane borders */
+ */
+/* .Root__globalNav,
+ */
+/* .main-yourLibraryX-entryPoints,
+ */
+/* .Root__main-view,
+ */
+/* .main-nowPlayingBar-container,
+ */
+/* .Root__right-sidebar:has(aside:not(:empty)) {
+ */
+/*     border: var(--border-width) var(--border-style);
+ */
+/*     border-color: var(--spice-border-inactive);
+ */
+/*     border-radius: var(--border-radius);
+ */
+/*     background-color: var(--spice-main);
+ */
+/*     transition: border-color var(--border-transition);
+ */
+/* }
+ */
+/* .Root__globalNav:hover,
+ */
+/* .main-yourLibraryX-entryPoints:hover,
+ */
+/* .Root__main-view:hover,
+ */
+/* .main-nowPlayingBar-container:hover,
+ */
+/* .Root__right-sidebar:has(aside:not(:empty)):hover {
+ */
+/*     border: var(--border-width) var(--border-style);
+ */
+/*     border-color: var(--spice-border-active);
+ */
+/* }
+ */
+
+/* /* pane headers */
+ */
+/* .Root__nav-bar .main-yourLibraryX-entryPoints {
+ */
+/*     overflow-x: visible !important;
+ */
+/* }
+ */
+/* .Root__globalNav::before,
+ */
+/* .main-globalNav-searchContainer
+ */
+/*     form
+ */
+/*     div:has(> .main-topBar-searchBar:focus)::before,
+ */
+/* .Root__nav-bar
+ */
+/*     .main-yourLibraryX-entryPoints:has(.main-yourLibraryX-navItems)::before,
+ */
+/* .Root__nav-bar
+ */
+/*     .main-yourLibraryX-entryPoints:has(
+ */
+/*         .main-yourLibraryX-libraryContainer
+ */
+/*     )::before,
+ */
+/* .Root__main-view::before,
+ */
+/* .main-nowPlayingBar-container::before,
+ */
+/* .Root__right-sidebar:has(aside:not(:empty))::before {
+ */
+/*     color: var(--spice-header);
+ */
+/*     position: absolute;
+ */
+/*     margin: -10px 4px;
+ */
+/*     background: var(--spice-main);
+ */
+/*     padding: 0 3px;
+ */
+/*     z-index: 3;
+ */
+/*     transition: color var(--border-transition);
+ */
+/* }
+ */
+/* .Root__globalNav::before {
+ */
+/*     content: "Nav";
+ */
+/*     top: 0;
+ */
+/*     left: 0;
+ */
+/* }
+ */
+/* .main-globalNav-searchContainer
+ */
+/*     form
+ */
+/*     div:has(> .main-topBar-searchBar:focus)::before {
+ */
+/*     content: "Search";
+ */
+/*     color: var(--spice-border-active) !important;
+ */
+/* }
+ */
+/* .Root__nav-bar
+ */
+/*     .main-yourLibraryX-entryPoints:has(.main-yourLibraryX-navItems)::before {
+ */
+/*     content: "Pages";
+ */
+/* }
+ */
+/* .Root__nav-bar
+ */
+/*     .main-yourLibraryX-entryPoints:has(
+ */
+/*         .main-yourLibraryX-libraryContainer
+ */
+/*     )::before {
+ */
+/*     content: "Library";
+ */
+/* }
+ */
+/* .Root__main-view::before {
+ */
+/*     content: "Main";
+ */
+/*     position: fixed;
+ */
+/* }
+ */
+/* .main-nowPlayingBar-container::before {
+ */
+/*     content: "Playing";
+ */
+/* }
+ */
+/* .Root__right-sidebar:has(aside:not(:empty)):before {
+ */
+/*     content: "Sidebar";
+ */
+/* }
+ */
+/* .Root__globalNav:hover::before,
+ */
+/* .Root__nav-bar .main-yourLibraryX-entryPoints:hover::before,
+ */
+/* .Root__main-view:hover::before,
+ */
+/* .main-nowPlayingBar-container:hover::before,
+ */
+/* .Root__right-sidebar:has(aside:not(:empty)):hover::before {
+ */
+/*     color: var(--spice-border-active);
+ */
+/* }
+ */
+
+/* /* scrollbars */
+ */
+/* .os-scrollbar-handle {
+ */
+/*     border-radius: var(--border-radius) !important;
+ */
+/*     width: 2px !important;
+ */
+/*     position: absolute;
+ */
+/*     top: 0;
+ */
+/*     right: 0;
+ */
+/* }
+ */
+/* .os-scrollbar-handle:hover {
+ */
+/*     border-radius: var(--border-radius) !important;
+ */
+/*     width: 6px !important;
+ */
+/* }
+ */
+/* .os-scrollbar-vertical {
+ */
+/*     top: 5px !important;
+ */
+/*     right: 5px !important;
+ */
+/* }
+ */
+
+/* /* context menus + tippy boxes */
+ */
+/* .main-contextMenu-menu,
+ */
+/* .tippy-box,
+ */
+/* #context-menu > ul,
+ */
+/* #context-menu > form,
+ */
+/* #context-menu div > ul {
+ */
+/*     border: var(--border-width) var(--border-style) var(--spice-border-active);
+ */
+/*     border-radius: var(--border-radius) !important;
+ */
+/* }
+ */
+
+/* /* modals */
+ */
+/* .GenericModal,
+ */
+/* .GenericModal__overlay > div,
+ */
+/* dialog {
+ */
+/*     border: var(--border-width) var(--border-style) var(--spice-border-active);
+ */
+/*     border-radius: var(--border-radius) !important;
+ */
+/*     overflow: visible !important;
+ */
+/*     box-shadow: 0 0 0 16px var(--spice-main);
+ */
+/* }
+ */
+/* .GenericModal::before,
+ */
+/* .GenericModal__overlay > div::before,
+ */
+/* dialog::before {
+ */
+/*     content: "Modal";
+ */
+/*     color: var(--spice-border-active);
+ */
+/*     position: absolute;
+ */
+/*     margin: -10px 4px;
+ */
+/*     background: var(--spice-main);
+ */
+/*     padding: 0 3px;
+ */
+/*     z-index: 9;
+ */
+/* }
+ */
+
+/* /* inputs */
+ */
+/* button,
+ */
+/* .x-toggle-indicatorWrapper,
+ */
+/* select {
+ */
+/*     border-radius: var(--border-radius) !important;
+ */
+/* }
+ */
+/* button:hover {
+ */
+/*     transform: unset !important;
+ */
+/* }
+ */
+/* select {
+ */
+/*     color: var(--spice-text) !important;
+ */
+/*     border: 1px solid var(--essential-subdued) !important;
+ */
+/* }
+ */
+/* select:hover,
+ */
+/* select:focus {
+ */
+/*     border: 1px solid var(--essential-base) !important;
+ */
+/* }
+ */
+
+/* /*  ================================ */
+ */
+/*     GLOBAL NAV
+ */
+/*     ================================ */
+ */
+
+/* /* fix spacing */
+ */
+/* .main-globalNav-historyButtonsContainer > div {
+ */
+/*     gap: 0;
+ */
+/*     -webkit-padding-start: 0;
+ */
+/*     padding-inline-start: 0;
+ */
+/*     -webkit-margin-start: 0;
+ */
+/*     margin-inline-start: 0;
+ */
+/* }
+ */
+/* .main-globalNav-historyButtonsContainer
+ */
+/*     > div:not([class*="custom"])
+ */
+/*     > div:nth-child(1),
+ */
+/* .Root__globalNav > div:nth-child(3) > div:nth-child(2),
+ */
+/* .main-topBar-topbarContentRight + div {
+ */
+/*     height: 0;
+ */
+/*     width: 0;
+ */
+/* }
+ */
+/* .Root__globalNav > div:nth-child(3) {
+ */
+/*     -webkit-margin-end: 0;
+ */
+/*     margin-inline-end: 0;
+ */
+/* }
+ */
+/* .main-globalNav-historyButtons {
+ */
+/*     gap: 0 !important;
+ */
+/*     padding-inline: 0 !important;
+ */
+/* }
+ */
+/* .main-globalNav-historyButtons > button {
+ */
+/*     padding-inline: var(--encore-spacing-tighter, 12px);
+ */
+/* }
+ */
+
+/* /* icons */
+ */
+/* .main-globalNav-historyButtonsContainer svg,
+ */
+/* .main-globalNav-searchContainer svg {
+ */
+/*     transform: scale(0.7);
+ */
+/* }
+ */
+
+/* /* search section */
+ */
+/* .main-globalNav-searchSection,
+ */
+/* .main-globalNav-searchContainer {
+ */
+/*     align-items: center;
+ */
+/* }
+ */
+/* .main-globalNav-searchSection {
+ */
+/*     position: unset;
+ */
+/*     top: unset;
+ */
+/*     left: unset;
+ */
+/* }
+ */
+/* .main-globalNav-searchContainer {
+ */
+/*     max-width: unset;
+ */
+/*     width: 100%;
+ */
+/* }
+ */
+/* .x-searchInput-searchInputInput,
+ */
+/* .main-globalNav-searchContainer form .main-topBar-searchBar {
+ */
+/*     border-radius: var(--border-radius);
+ */
+/*     border: 1px solid;
+ */
+/*     border-color: var(--spice-main);
+ */
+/* }
+ */
+/* .x-searchInput-searchInputInput:hover,
+ */
+/* .x-searchInput-searchInputInput:focus,
+ */
+/* .main-globalNav-searchContainer form:hover .main-topBar-searchBar {
+ */
+/*     box-shadow: none;
+ */
+/*     border: 1px solid;
+ */
+/*     border-color: var(--spice-border-inactive);
+ */
+/* }
+ */
+/* .Root__globalNav:hover:has(.main-topBar-searchBar:focus) {
+ */
+/*     border: var(--border-width) var(--border-style);
+ */
+/*     border-color: var(--spice-border-inactive);
+ */
+/* }
+ */
+/* .Root__globalNav:hover:has(.main-topBar-searchBar:focus)::before {
+ */
+/*     color: var(--spice-header);
+ */
+/* }
+ */
+/* .main-globalNav-searchContainer form .main-topBar-searchBar:focus {
+ */
+/*     box-shadow: none;
+ */
+/*     border: var(--border-width) var(--border-style);
+ */
+/*     border-color: var(--spice-border-active);
+ */
+/*     outline: 14px solid var(--spice-main);
+ */
+/* }
+ */
+/* .main-globalNav-searchContainer
+ */
+/*     form
+ */
+/*     :is(#recent-searches-dropdown, #search-dropdown)
+ */
+/*     > div {
+ */
+/*     border-radius: var(--border-radius);
+ */
+/*     box-shadow: none;
+ */
+/*     margin: 24.5px 0;
+ */
+/*     border: var(--border-width) var(--border-style);
+ */
+/*     border-color: var(--spice-border-active);
+ */
+/*     outline: 14px solid var(--spice-main);
+ */
+/* }
+ */
+/* form .main-topBar-searchBar::placeholder,
+ */
+/* form .main-topBar-searchBar:placeholder-shown {
+ */
+/*     transition: none !important;
+ */
+/* }
+ */
+
+/* /*  ================================ */
+ */
+/*     LEFT SIDEBAR
+ */
+/*     ================================ */
+ */
+
+/* /* pages pane */
+ */
+/* .main-yourLibraryX-navLink {
+ */
+/*     height: 24px;
+ */
+/*     gap: 8px;
+ */
+/*     text-decoration: none !important;
+ */
+/* }
+ */
+/* .main-yourLibraryX-navLink > svg,
+ */
+/* .main-yourLibraryX-header .main-yourLibraryX-collapseButtonWrapper > span {
+ */
+/*     transform: scale(0.7);
+ */
+/* }
+ */
+
+/* /* library pane */
+ */
+/* .HeaderSideArea:has(.x-entityImage-imageContainer) {
+ */
+/*     transform: scale(0.7);
+ */
+/* }
+ */
+/* .main-yourLibraryX-filterArea {
+ */
+/*     padding: 0 8px;
+ */
+/* }
+ */
+/* .main-yourLibraryX-libraryRootlist {
+ */
+/*     padding: 0 16px 8px;
+ */
+/* }
+ */
+/* .main-yourLibraryX-listItem span.LineClamp {
+ */
+/*     -webkit-line-clamp: 1;
+ */
+/*     line-clamp: 1;
+ */
+/* }
+ */
+
+/* /* sidebar config */
+ */
+/* .main-yourLibraryX-entryPoints:first-child:has(
+ */
+/*         .main-yourLibraryX-navItems:empty
+ */
+/*     ) {
+ */
+/*     display: none;
+ */
+/* }
+ */
+
+/* /*  ================================ */
+ */
+/*     MAIN VIEW
+ */
+/*     ================================ */
+ */
+
+/* .view-homeShortcutsGrid-shortcuts::before {
+ */
+/*     content: "                                                                    \A       _/_/_/                        _/      _/      _/_/            \A    _/        _/_/_/      _/_/    _/_/_/_/        _/      _/    _/   \A     _/_/    _/    _/  _/    _/    _/      _/  _/_/_/_/  _/    _/    \A        _/  _/    _/  _/    _/    _/      _/    _/      _/    _/     \A _/_/_/    _/_/_/      _/_/        _/_/  _/    _/        _/_/_/      \A          _/                                                _/       \A         _/                                            _/_/          ";
+ */
+/*     font-family: var(--font-logo);
+ */
+/*     font-size: 12px;
+ */
+/*     line-height: 1;
+ */
+/*     white-space: pre;
+ */
+/*     padding: 32px 0;
+ */
+/*     color: var(--spice-banner);
+ */
+/*     text-wrap: nowrap;
+ */
+/*     display: var(--display-spicetify-banner-ascii);
+ */
+/* }
+ */
+/* .main-entityHeader-headerText::before {
+ */
+/*     content: "────█▀█▄▄▄▄─────██▄\A────█▀▄▄▄▄█─────█▀▀█\A─▄▄▄█─────█──▄▄▄█\A██▀▄█─▄██▀█─███▀█\A─▀▀▀──▀█▄█▀─▀█▄█▀\A";
+ */
+/*     white-space: pre-wrap;
+ */
+/*     padding-bottom: 32px;
+ */
+/*     color: var(--spice-banner);
+ */
+/*     line-height: 1.2;
+ */
+/*     text-wrap: nowrap;
+ */
+/*     display: var(--display-music-banner-ascii);
+ */
+/* }
+ */
+
+/* /* top bar */
+ */
+/* .main-topBar-container a,
+ */
+/* .marketplace-tabBar-active {
+ */
+/*     text-decoration: underline !important;
+ */
+/* }
+ */
+/* .search-searchCategory-catergoryGrid *,
+ */
+/* .main-shelf-subHeader *,
+ */
+/* .ChipInnerComponent-sm,
+ */
+/* .ChipInnerComponent-sm-selected,
+ */
+/* .ChipInnerComponent-sm-selected-isUsingKeyboard {
+ */
+/*     border-radius: var(--border-radius);
+ */
+/* }
+ */
+/* .main-actionBar-ActionBar
+ */
+/*     button:is([class*="button-primary"], [data-encore-id="buttonPrimary"]),
+ */
+/* .main-actionBar-ActionBar
+ */
+/*     button:is(
+ */
+/*         [class*="button-primary"],
+ */
+/*         [data-encore-id="buttonPrimary"]
+ */
+/*     ):hover,
+ */
+/* .main-topBar-topbarContent
+ */
+/*     button:is([class*="button-primary"], [data-encore-id="buttonPrimary"]),
+ */
+/* .main-topBar-topbarContent
+ */
+/*     button:is(
+ */
+/*         [class*="button-primary"],
+ */
+/*         [data-encore-id="buttonPrimary"]
+ */
+/*     ):hover {
+ */
+/*     transform: scale(0.5) !important;
+ */
+/* }
+ */
+/* .main-actionBar-ActionBarRow > :first-child:not(:only-child) {
+ */
+/*     margin-right: var(--content-spacing);
+ */
+/* }
+ */
+
+/* /* headers */
+ */
+/* .main-entityHeader-container {
+ */
+/*     padding: var(--content-spacing) 0;
+ */
+/* }
+ */
+/* .main-entityHeader-container.main-entityHeader-withBackgroundImage {
+ */
+/*     background-image: radial-gradient(
+ */
+/*         circle,
+ */
+/*         rgba(var(--spice-rgb-main), 0.7) 0%,
+ */
+/*         rgba(var(--spice-rgb-main), 0.9) 50%,
+ */
+/*         rgba(var(--spice-rgb-main), 1) 100%
+ */
+/*     );
+ */
+/* }
+ */
+
+/* /* lyrics page & sidebar */
+ */
+/* div.main-nowPlayingView-section > div.main-nowPlayingView-sectionHeader > h2 {
+ */
+/*     display: none !important;
+ */
+/* }
+ */
+
+/* div.main-nowPlayingView-section:has(> div.main-nowPlayingView-sectionHeader) {
+ */
+/*     display: none !important;
+ */
+/* }
+ */
+
+/* .lyrics-lyrics-background {
+ */
+/*     background-color: var(--spice-main);
+ */
+/* }
+ */
+/* .main-nowPlayingView-sectionHeaderSpacing.main-nowPlayingView-lyricsGradient {
+ */
+/*     background-color: var(--background-tinted-base);
+ */
+/* }
+ */
+/* .lyrics-lyrics-contentContainer {
+ */
+/*     justify-content: start;
+ */
+/* }
+ */
+/* .lyrics-lyrics-container,
+ */
+/* .main-nowPlayingView-section {
+ */
+/*     --lyrics-color-active: var(--spice-text) !important;
+ */
+/*     --lyrics-color-inactive: var(--spice-subtext) !important;
+ */
+/*     --lyrics-color-passed: var(--spice-subtext) !important;
+ */
+/*     --lyrics-color-messaging: var(--spice-subtext) !important;
+ */
+/* }
+ */
+/* .lyrics-lyricsContent-lyric {
+ */
+/*     opacity: 0.3;
+ */
+/*     display: flex;
+ */
+/*     flex-direction: row;
+ */
+/* }
+ */
+/* .lyrics-lyricsContent-lyric.lyrics-lyricsContent-highlight {
+ */
+/*     opacity: 0.7;
+ */
+/*     transition: none;
+ */
+/* }
+ */
+/* .lyrics-lyricsContent-lyric.lyrics-lyricsContent-active:not(:empty) {
+ */
+/*     background-color
+ */
