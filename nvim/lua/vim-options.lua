@@ -10,6 +10,7 @@ vim.cmd("set shiftwidth=2")
 -- Options
 vim.opt.cmdheight = 0
 vim.opt.equalalways = false
+vim.opt.fillchars:append({ eob = " " })
 
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"

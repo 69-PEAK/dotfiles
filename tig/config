@@ -1,0 +1,29 @@
+# Use function tig-theme for changing theme
+
+# Core
+set mouse = yes
+set line-graphics = utf-8
+
+# Key bindings
+bind diff w +wrap
+bind main R refresh
+
+# Theme
+source ~/.config/tig/theme.tig
+
+set main-view = \
+    date:custom \
+    author:full \
+    id:yes \
+    commit-title:graph=v2,refs=true
+
+set main-view-date-format = "%Y-%m-%d %H:%M"
+
+set blame-view = \
+    line-number:yes,interval=1 \
+    date:custom \
+    author:full \
+    id:yes \
+    text
+
+set blame-view-date-format = "%Y-%m-%d %H:%M"

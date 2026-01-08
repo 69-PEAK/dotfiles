@@ -1,0 +1,130 @@
+# ===== FONT SETTINGS =====
+font_family      FiraCode Nerd Font
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+font_size 13.0
+
+# Font features
+disable_ligatures never
+
+# ===== CURSOR =====
+cursor_shape block
+cursor_blink_interval 0
+cursor_stop_blinking_after 15.0
+
+# ===== SCROLLBACK =====
+scrollback_lines 10000
+
+# ===== MOUSE =====
+mouse_hide_wait 3.0
+url_color #0087bd
+url_style curly
+open_url_with default
+copy_on_select yes
+
+# ===== PERFORMANCE =====
+repaint_delay 10
+input_delay 3
+sync_to_monitor yes
+
+# ===== BELL =====
+enable_audio_bell no
+visual_bell_duration 0.0
+window_alert_on_bell no
+
+# ===== WINDOW LAYOUT =====
+remember_window_size  yes
+initial_window_width  1200
+initial_window_height 700
+window_padding_width 10
+window_padding_height 10
+window_margin_width 8
+
+# Hide title bar on macOS
+hide_window_decorations titlebar-only
+macos_titlebar_color background
+macos_thicken_font 0.15
+
+# ===== TAB BAR =====
+tab_bar_edge top
+tab_bar_style powerline
+tab_powerline_style slanted
+tab_title_template "{index}: {title}"
+active_tab_font_style bold
+inactive_tab_font_style normal
+tab_bar_margin_width 1.0
+tab_bar_margin_height 1.0 0.5
+
+# Basic colors
+background_opacity 0.8
+background_blur 32
+dynamic_background_opacity yes
+
+# Cursor 
+cursor #5294e2
+cursor_text_color #2b303b
+
+# URL 
+url_color #5294e2
+detect_urls yes
+url_style straight
+open_url_with default
+
+# Border colors
+active_border_color #5294e2
+inactive_border_color #404552
+bell_border_color #ff3333
+
+# Tab bar colors
+active_tab_foreground #0da38a 
+active_tab_background #1d202f
+inactive_tab_foreground #ffffff
+inactive_tab_background #292945
+
+
+# ===== ADVANCED =====
+shell .
+editor nvim
+close_on_child_death no
+allow_remote_control yes
+listen_on unix:/tmp/kitty
+
+# macOS specific
+macos_option_as_alt yes
+macos_quit_when_last_window_closed yes
+macos_window_resizable yes
+macos_show_window_title_in none
+
+# ===== KEYBOARD SHORTCUTS =====
+# Clipboard
+map cmd+c copy_to_clipboard
+map cmd+v paste_from_clipboard
+
+# Window management
+map cmd+n new_os_window
+map cmd+w close_window
+map cmd+enter new_window
+
+# Tab management
+map cmd+t new_tab
+map cmd+shift+w close_tab
+map cmd+shift+] next_tab
+map cmd+shift+[ previous_tab
+map cmd+1 goto_tab 1
+map cmd+2 goto_tab 2
+map cmd+3 goto_tab 3
+map cmd+4 goto_tab 4
+map cmd+5 goto_tab 5
+
+# Font size
+map cmd+equal change_font_size all +1.0
+map cmd+minus change_font_size all -1.0
+map cmd+0 change_font_size all 0
+
+# Misc
+map cmd+, edit_config_file
+map cmd+shift+r load_config_file
+
+# Theme
+include themes/decay.conf

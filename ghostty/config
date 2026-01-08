@@ -1,12 +1,12 @@
 # {ghostty +list-themes}
-theme = TokyoNight
+theme = transparent.conf
 
 # Cursor
 cursor-style = bar
 cursor-style-blink = false
 adjust-cursor-thickness = 2
-shell-integration-features = cursor,sudo 
-# no cursor
+shell-integration-features = cursor,sudo
+adjust-cell-height = 20%
 
 # MacOS
 # 'official', blueprint`, `chalkboard`, `microchip`, `glass`, `holographic`,`paper`, `retro`, `xray`
@@ -25,7 +25,12 @@ quit-after-last-window-closed = true
 confirm-close-surface = false
 quick-terminal-animation-duration = 0.08
 
-
+# Window splits - visual indicator for active pane
+window-padding-x = 4
+window-padding-y = 4
+window-decoration = true
+unfocused-split-opacity = 0.7
+unfocused-split-fill = #1a1b26
 
 # Fonts
 # font-family = "JetBrainsMono Nerd Font"
@@ -35,6 +40,23 @@ font-size = 16
 
 # Keybinds
 # keybind = cmd+s=toggle_quick_terminal
+
+# PANE SPLITTING
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = cmd+shift+w=close_surface
+
+# Navigate between panes
+keybind = alt+left=goto_split:previous
+keybind = alt+right=goto_split:next
+keybind = alt+up=goto_split:previous
+keybind = alt+down=goto_split:next
+
+# Resize panes
+keybind = cmd+ctrl+left=resize_split:left,10
+keybind = cmd+ctrl+right=resize_split:right,10
+keybind = cmd+ctrl+up=resize_split:up,10
+keybind = cmd+ctrl+down=resize_split:down,10
 
 # Shaders
 # custom-shader-animation = true

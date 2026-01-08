@@ -9,7 +9,7 @@ return {
 		if not status_ok then
 			return
 		end
-
+		
 		lualine.setup({
 			options = {
 				theme = "auto",

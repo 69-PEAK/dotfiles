@@ -1,0 +1,53 @@
+# Catppuccin Mocha Purplish (Minimal, Working, Classic Sections)
+
+# Base
+color default        250  black
+color cursor         black   magenta
+color status         magenta black  
+color title-focus    black   magenta
+color title-blur     magenta black
+color delimiter      magenta black
+color header         magenta black    
+color line-number    magenta black
+color id             217     black
+color date           magenta black
+color author         210     black
+color mode           magenta black
+color overflow       magenta black
+color directory      magenta black
+color file           33      black
+color graph-commit   magenta black
+color main-head      35      black
+color main-remote    yellow  black
+color main-tracked   red     black
+color main-tag                      197         default
+color main-local-tag                161         default
+color main-ref                      144         default
+
+# Blame 
+color blame.line-number             183         default
+color blame.date                    66        default 
+      
+# Commit log
+# color commit         cyan  black
+# color "Author: "     green black
+
+# Help view
+color help.header                   183         default             bold
+color help.section                  187         default
+color help-group                    69          default
+color help-action                   141         default
+
+
+# Diff
+color diff-header                       141     black        
+color diff-chunk                        183     black        
+color diff-add                          110     black        
+color diff-del                          175     black  
+color "---"                             magenta black   
+color "gpg: "                           23      default
+color "Primary key fingerprint: "       magenta black   
+
+# Search
+color search-result  141     237         
+

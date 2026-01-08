@@ -32,6 +32,32 @@ vim.opt.rtp:prepend(lazypath)
 -- Lazy will automatically load all .lua files in that folder
 require("lazy").setup("plugins")
 
+-- List of groups to force transparent
+local transparent_groups = {
+	"Normal",
+	"NormalNC",
+	"EndOfBuffer",
+	"SignColumn",
+	"LineNr",
+	"FoldColumn",
+}
+
+-- Function to clear bg for all groups
+local function make_transparent()
+	for _, group in ipairs(transparent_groups) do
+		vim.api.nvim_set_hl(0, group, { bg = "none", ctermbg = "none" })
+	end
+end
+
+-- Apply immediately (current colorscheme)
+make_transparent()
+
+-- Reapply every time a colorscheme changes
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = make_transparent,
+})
+
 -- Added for supporessing image-clip notfiication (its a bug of image-clip)
 local orig_notify = vim.notify
 vim.notify = function(msg, level, opts)
@@ -40,12 +66,3 @@ vim.notify = function(msg, level, opts)
 	end
 	return orig_notify(msg, level, opts)
 end
-
--- Always hide ~ tildes
-vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter", "UIEnter" }, {
-	pattern = "*",
-	callback = function()
-		-- Set both termguicolors and standard colors
-		vim.cmd("highlight! EndOfBuffer guifg=bg guibg=bg ctermbg=NONE ctermfg=NONE")
-	end,
-})

@@ -10,3 +10,4 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 # Default editor
 export EDITOR="nvim"
 export VISUAL="nvim"
+

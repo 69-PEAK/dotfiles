@@ -8,8 +8,7 @@
 start-at-login = true                           # Launch AeroSpace automatically when macOS starts
 after-login-command = []                        # Commands to execute immediately after macOS login
 # after-startup-command = [                       # Commands to execute after AeroSpace fully starts
-#    "exec-and-forget borders active_color=0xff7aa2f7 inactive_color=0xff1e1e2e width=4.0 style=round shadow_color=0x80000000 shadow_width=6.0"
-# ]
+#    "exec-and-forget borders active_color=0xff7aa2f7 inactive_color=0xff1e1e2e width=4.0 style=round shadow_color=0x80000000 shadow_width=6.0" ]
 
 # -------------------------
 # Normalization & Layouts

@@ -148,7 +148,7 @@ return {
 					title = "Projects",
 					section = "projects",
 					indent = 2, -- LEFT INDENT FOR PROJECT ITEMS
-					padding ={ 1, 1 }, -- SPACE ABOVE "Projects" title
+					padding = { 1, 1 }, -- SPACE ABOVE "Projects" title
 					limit = 4,
 				},
 
@@ -323,18 +323,18 @@ return {
 				-- DASHBOARD COLOR HIGHLIGHT GROUPS
 				-- Change the color after "fg = colors." to customize
 				-- ========================================================
-			--	vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = colors.blue, bold = true }) -- NEOVIM ASCII HEADER COLOR (top left)
-			--	vim.api.nvim_set_hl(0, "SnacksDashboardKey", { fg = colors.orange, bold = true }) -- KEYBINDING LETTERS COLOR (f, n, g, r, c, s, L, q)
-			--	vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = colors.cyan }) -- MENU TEXT COLOR ("Find File", "New File", "Find Text", etc.) - Try:  colors.cyan, colors.purple, colors.blue, colors.green
-			--	vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = colors.blue }) -- MENU ICONS COLOR (icons on left menu)
-			--	vim.api.nvim_set_hl(0, "SnacksDashboardFooter", { fg = colors.cyan, italic = true }) -- FOOTER TEXT COLOR ("Neovim loaded X plugins")
-			--	vim.api.nvim_set_hl(0, "SnacksDashboardTitle", { fg = colors.cyan, bold = true }) -- SECTION TITLES COLOR ("Recent Files", "Projects", "Git Status")
-			--	vim.api.nvim_set_hl(0, "SnacksDashboardFile", { fg = colors.cyan }) -- FILE NAMES COLOR (init.lua, image.lua, telescope.lua, etc.) - Try: colors.cyan, colors.purple, colors.green
-			--	vim.api.nvim_set_hl(0, "SnacksDashboardDir", { fg = colors.comment }) -- DIRECTORY/PATH COLOR (path prefixes)
-			--	vim.api.nvim_set_hl(0, "SnacksDashboardSpecial", { fg = colors.purple }) -- SPECIAL ELEMENTS COLOR
+				--	vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = colors.blue, bold = true }) -- NEOVIM ASCII HEADER COLOR (top left)
+					vim.api.nvim_set_hl(0, "SnacksDashboardKey", { fg = colors.orange, bold = true }) -- KEYBINDING LETTERS COLOR (f, n, g, r, c, s, L, q)
+				--	vim.api.nvim_set_hl(0, "SnacksDashboardDesc", { fg = colors.cyan }) -- MENU TEXT COLOR ("Find File", "New File", "Find Text", etc.) - Try:  colors.cyan, colors.purple, colors.blue, colors.green
+				--	vim.api.nvim_set_hl(0, "SnacksDashboardIcon", { fg = colors.blue }) -- MENU ICONS COLOR (icons on left menu)
+				--	vim.api.nvim_set_hl(0, "SnacksDashboardFooter", { fg = colors.cyan, italic = true }) -- FOOTER TEXT COLOR ("Neovim loaded X plugins")
+				--	vim.api.nvim_set_hl(0, "SnacksDashboardTitle", { fg = colors.cyan, bold = true }) -- SECTION TITLES COLOR ("Recent Files", "Projects", "Git Status")
+					vim.api.nvim_set_hl(0, "SnacksDashboardFile", { fg = colors.cyan }) -- FILE NAMES COLOR (init.lua, image.lua, telescope.lua, etc.) - Try: colors.cyan, colors.purple, colors.green
+					vim.api.nvim_set_hl(0, "SnacksDashboardDir", { fg = colors.comment }) -- DIRECTORY/PATH COLOR (path prefixes)
+					vim.api.nvim_set_hl(0, "SnacksDashboardSpecial", { fg = colors.purple }) -- SPECIAL ELEMENTS COLOR
 
 				-- ========================================================
-				-- DEBUG GLOBALS (don't touch these)
+				-- DEBUG GLOBALS
 				-- ========================================================
 				_G.dd = function(...)
 					Snacks.debug.inspect(...)
@@ -345,7 +345,7 @@ return {
 				vim.print = _G.dd
 
 				-- ========================================================
-				-- TOGGLE MAPPINGS (don't touch these)
+				-- TOGGLE MAPPINGS
 				-- ========================================================
 				Snacks.toggle.option("spell", { name = "Spelling" }):map("<leader>us")
 				Snacks.toggle.option("wrap", { name = "Wrap" }):map("<leader>uw")

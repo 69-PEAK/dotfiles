@@ -1,0 +1,18 @@
+# Base
+color default        white   black
+color cursor         black   blue
+color status         blue    black
+
+# Commit log
+color commit         white   black
+color author         cyan    black
+color date           cyan    black
+
+# Diff
+color diff-header    blue    black
+color diff-chunk     magenta black
+color diff-add       green   black
+color diff-del       red     black
+
+# Search
+color search-result  black   yellow

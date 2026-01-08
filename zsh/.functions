@@ -148,7 +148,7 @@ tig-theme() {
   fi
 
   ln -sf "$themes/$theme" "$base/theme.tig"
-  echo "tig theme switched to '$theme'"
+  echo "Theme '$theme' applied! Restart tig to see changes."
 }
 ################################### Lazygit theme switcher using yq ##################################
 lazy-theme() {
